@@ -1,0 +1,63 @@
+.a {
+  fill: #fff;
+}
+.b {
+  fill: #0f4c81;
+}
+.c,
+.d {
+  stroke: none;
+}
+.d {
+  fill: #0f4c81;
+}
+
+.text-block {
+  position: absolute;
+  color: white;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.noInternetClass1 {
+  padding-top: 3%;
+  padding-bottom: 3%;
+}
+.noInternetClass2 {
+  width: 60%;
+  border-radius: 10px;
+  border: 5px solid white;
+  padding: 2%;
+}
+.noInternetClass3 {
+  padding: 3%;
+}
+.noInternetClass4 {
+  height: 40px;
+  width: 150px;
+}
+.noInternetClass5 {
+  margin-top: 10px;
+  height: 70vh;
+}
+.noInternetClass6 {
+  border-radius: 10px;
+  border: 5px solid white;
+  padding: 2%;
+}
+.noInternetClass7 {
+  height: 30px;
+  width: 85px;
+}
+
+.progressbarClass1 {
+  height: 10px;
+  width: 100%;
+  background-color: #c4c4c4;
+  border-radius: 40px;
+  margin: 5px;
+}
+
+.progressbarClass2 {
+  border-radius: 40px;
+  text-align: "right";
+}

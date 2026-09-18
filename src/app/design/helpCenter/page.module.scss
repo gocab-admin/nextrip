@@ -1,0 +1,106 @@
+.logosec {
+    padding: 20px 60px;
+}
+
+.body {
+    padding: 0px 80px;
+
+    .content {
+        display: grid;
+        justify-content: center;
+        align-items: center;
+
+       .flex{
+        padding-top: 20px;
+        display: flex;
+        margin: auto;
+        .searchBar {
+            // position: relative;
+            padding: 20px 20px;
+            width: 300px;
+            background-color: #f5f5f5;
+            border: 1px solid #e2e2e2;
+            border-radius: 50px 0px 0px 50px;
+            border-right: 0px;
+
+            input {
+                background-color: transparent;
+                border: transparent;
+                outline: transparent !important;
+
+                input:focus {
+                    outline: transparent !important;
+                    border-color: transparent;
+                }
+            }
+        }
+        .searchBarhover{
+            padding: 20px 20px;
+            width: 300px;
+            background-color: var(--btn-color);
+            border: 1px solid #e2e2e2;
+            border-radius: 50px 0px 0px 50px;
+            border-right: 0px;
+            input {
+                background-color: transparent;
+                border: transparent;
+                outline: transparent !important;
+
+                input:focus {
+                    outline: transparent !important;
+                    border-color: transparent;
+                }
+            }
+            
+        }
+        .icon{
+            padding: 10px 10px;
+            width: 60px;
+            background-color: #f5f5f5;
+            border: 1px solid #e2e2e2;
+            border-radius: 0px 50px 50px 0px;
+            border-left: none;
+            .search {
+                margin-top: 2px;
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                border-color: #E81948;
+                background-color: #E81948;
+                .searchIcon{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    padding-top: 9px;
+                }
+            }
+        }
+        .iconhover{
+            padding: 10px 10px;
+            width: 60px;
+            background-color: var(--btn-color);
+            border: 1px solid #e2e2e2;
+            border-radius: 0px 50px 50px 0px;
+            border-left: none;
+            .search {
+                margin-top: 2px;
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                border-color: #E81948;
+                background-color: #E81948;
+                .searchIcon{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    padding-top: 9px;
+                }
+            }
+        }
+       }
+    }
+    .tab{
+        margin: 0px 40px;
+        padding-top: 20px;
+    }
+}

@@ -1,0 +1,22 @@
+.body{
+    height: 100vh;
+    padding-top: 40px;
+    width: 50%;
+    margin: auto;
+}
+@media screen and (max-width:920px){
+    .body{
+        height: 100vh;
+        padding-top: 40px;
+        width: 70%;
+        margin: auto;
+    }
+}
+@media screen and (max-width:600px){
+    .body{
+        height: 100vh;
+        padding-top: 40px;
+        width: 100%;
+        margin: auto;
+    }
+}

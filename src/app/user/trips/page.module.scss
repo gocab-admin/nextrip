@@ -1,0 +1,181 @@
+.reservation {
+
+    .reservation_content {
+        
+        h1{
+        font-size: var(--h1-font-size);
+        font-family: var(--font-family-base);
+        color: var(--text-color);
+        }
+        
+        .divider {
+            border-bottom: 1px solid var(--btn-color);
+        }
+
+        .tablist {
+            border-bottom: 1px solid var(--btn-color);
+
+            button {
+                text-transform: capitalize;
+                font-size: var(--msg-header-text);
+                font-weight: 700;
+                color: var(--trips-subtitle-color);
+                font-family: var(--font-family-base);
+                font-family: var(--font-family-inherit) !important;
+            }
+
+            >div>div>span {
+                background-color: var(--search-button-color) !important;
+            }
+        }
+
+        .panels {
+            padding: 0 !important;
+
+            >div {
+                text-align: center;
+                padding: 0 0 20px;
+                margin: 20px 0 0 0;
+            }
+
+            h5 {
+                font-size: var(--msg-header-text);
+                font-weight: 800;
+                color: var(--footer-text-color);
+                margin: 0;
+            }
+
+            // p {
+                // color: var(--footer-text-color);
+            // }
+
+            button {
+                font-size: var(--homepage-footer-size);
+                font-weight: 700;
+                // color: rgb(34, 34, 34);
+                font-family: var(--font-family-base);
+            }
+        }
+
+        .text_align {
+            text-align: left;
+            margin: 12px 0 40px;
+            padding: 12px 0 40px;
+            height: 53vh;
+
+            button {
+                background: none;
+                border: none;
+                font-size: var(--msg-header-text);
+                font-weight: 700;
+                color: var(--footer-text-color);
+                text-decoration: underline;
+            }
+        }
+
+        .button_group {
+            padding: 10px 0 0;
+
+            &__leftbutton {
+
+                .link {
+                    color: var(--text-color);
+                    font-size: var(--homepage-header-size);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: transparent;
+                    border-radius: 50%;
+                    width: 48px;
+                    height: 48px;
+                }
+
+                .link:hover {
+                    background-color: var(--btn-color);
+                }
+            }
+
+            &__rightbutton {
+                display: flex;
+
+            }
+
+            &__button {
+                background-color: var(--btn-color);
+                border: 1px solid var(footer-text-color);
+                padding: 5px 15px;
+                border-radius: 8px;
+
+                .iosicon {
+                    margin: 0 0 0 8px;
+                    font-size: var(--filter-btn-text);
+                    transform: rotate(90deg);
+                }
+            }
+
+        }
+
+    }
+}
+
+.exportpopover {
+    button {
+        background: none;
+        border: none;
+        text-decoration: underline;
+        font-weight: 500;
+    }
+}
+
+.popover {
+
+    .popoverheader {
+        border-bottom: 1px solid var(--btn-color);
+
+        button {
+            background: none;
+            border: none;
+        }
+    }
+
+    .textfield {
+        border: 1px solid;
+        border-top-left-radius: 8px;
+        border-bottom-left-radius: 8px;
+
+        .input {
+            outline: none;
+            border: none;
+        }
+    }
+
+    .textfieldtwo {
+        border: 1px solid;
+        outline: none;
+        border-top-right-radius: 8px;
+        border-bottom-right-radius: 8px;
+    }
+
+    .popoverfooter {
+        border-top: 1px solid var(--btn-color);
+
+        button {
+            background: var(--text-color);
+            border: none;
+            color: var(--btn-color);
+            padding: 14px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+        }
+    }
+}
+
+.slide {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.table {
+    margin-top: 20px;
+    margin-bottom: 100px;
+}

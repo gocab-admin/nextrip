@@ -1,0 +1,1686 @@
+// "use client";
+// import React, { useState, useEffect, useCallback, useMemo, useRef } from "react";
+// import ImageList from "@mui/material/ImageList";
+// import ImageListItem from "@mui/material/ImageListItem";
+// import { useSearchParams } from "next/navigation";
+// import Dialog from "@mui/material/Dialog";
+// import IconButton from "@mui/material/IconButton";
+// import CloseIcon from "@mui/icons-material/Close";
+// import Slide from "@mui/material/Slide";
+// import { TransitionProps } from "@mui/material/transitions";
+// import "slick-carousel/slick/slick.css";
+// import "slick-carousel/slick/slick-theme.css";
+// import { useTheme } from "@mui/material/styles";
+// import { Calendar, DateObject } from "react-multi-date-picker";
+// import "react-multi-date-picker/styles/layouts/mobile.css";
+// import Accordion from "@mui/material/Accordion";
+// import AccordionDetails from "@mui/material/AccordionDetails";
+// import AccordionSummary from "@mui/material/AccordionSummary";
+// import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+// import { useRouter } from "next/navigation";
+// import { getApiMethod, postApiMethod } from "@/services/global";
+// import styles from "./page.module.scss";
+// import { setModal } from '@/redux/slice/modalSlice'
+// import { getDatesBetween } from "@/services/utils/dateFunctions";
+// import { fetchBookingData, getBookingEstimationSuccess, isLoadingPayment } from "@/redux/slice/user/BookingSlice";
+// import {
+//   RatingIcon,
+//   ShareIcon,
+//   AllImagesIcon,
+//   Kitchen,
+//   Bed,
+//   HeartIcon,
+//   Chat,
+//   Cleaning,
+//   Tag,
+//   Key,
+//   Check,
+//   Location,
+// } from "../../app/global/svg";
+// import RoomsDescription from "../../components/roomDescription";
+// import Footer from "../components/footer";
+// import Header from "../components/header";
+// import MapComponent from "../components/locationmap";
+// import MobilereserveBox from "../components/MobilereserveBox";
+// import APICONSTANT, { APIURLS } from "@/services/config";
+// import { getListingData } from "@/redux/slice/listdataSlice";
+// import Skeleton from "@mui/material/Skeleton";
+// import AddIcon from '@mui/icons-material/Add';
+// import Link from "next/link";
+// import { toast } from 'react-toastify'
+// import Drawer from '@mui/material/Drawer';
+// import RoomHeader from './header'
+
+// // import "react-multi-date-picker/styles/colors/green.css"
+// import {
+//   addArrImage,
+//   detailSelector,
+//   addListPrice,
+//   addRating,
+//   setCoordinate,
+// } from "../../redux/slice/detailSlice";
+// import { searchSelector } from "@/redux/slice/searchValue";
+// import { useAppDispatch, useAppSelector } from "../../redux/hooks";
+// import { getListData } from '@/redux/slice/listdataSlice'
+// import dayjs from 'dayjs'
+// import { addAlert, alertSelector } from "@/redux/slice/AlertSlice";
+// import relativeTime from 'dayjs/plugin/relativeTime'
+// import CustomModal from "../components/modal";
+// import SocialModal from "../components/SocialModal";
+// import PhotoCarousel from "../components/photoCarousel";
+// import { useSelector } from "react-redux";
+// import { bedsCount, listingSelector } from "@/redux/slice/listingSlice";
+// import RulesSection from "./rulesComponent";
+// import HostDetails from "./hostDetailsComponent";
+// import BedCarousel from "./bedCarousel";
+// import AmenitiesSection from "./AmenitySection"
+// import CalendarSection from "./calendarSection";
+// import RatingsSection from "./ratingSection";
+// import ReviewSection from "./reviewsSection";
+// import { currencySelector } from "@/redux/slice/CurrencySlice";
+// import Loader from "../components/loader";
+// dayjs.extend(relativeTime)
+
+
+// const Transition = React.forwardRef(function Transition(
+//   props: TransitionProps & {
+//     children: React.ReactElement;
+//   },
+//   ref: React.Ref<unknown>
+// ) {
+//   return <Slide direction="up" ref={ref} {...props} />;
+// });
+
+// function srcset(image: string, size: number, rows = 1, cols = 1) {
+//   return {
+//     src: `${image}?w=${size * cols}&h=${size * rows}&fit=crop&auto=format`,
+//     srcSet: `${image}?w=${size * cols}&h=${size * rows
+//       }&fit=crop&auto=format&dpr=2 2x`,
+//   };
+// }
+
+// const months = [
+//   "January",
+//   "February",
+//   "March",
+//   "April",
+//   "May",
+//   "June",
+//   "July",
+//   "August",
+//   "September",
+//   "October",
+//   "November",
+//   "December",
+// ];
+
+// export default function Home() {
+//   const { FilterList } = useAppSelector(searchSelector);
+//   const { CurrencyList } = useAppSelector(currencySelector)
+//   const loader = useSelector((state: any) => state.bookingEstimation.loadingPayment)
+//   const isAuth = FilterList.loginStatus
+//   const { DetailsList } = useAppSelector(detailSelector);
+//   const { ListInfo } = useAppSelector(listingSelector)
+//   const dispatch = useAppDispatch();
+//   const { price, image, rating, coordinate } = DetailsList;
+//   const router = useRouter();
+//   const [listData, setListData] = useState<any>([]);
+//   const [loading, setLoading] = useState(true);
+//   const [maxNight, setMaxNight] = useState<any>();
+//   // const [listReview, setListReview] = useState<any>([]);
+//   const [total, setTotal] = useState<any>(0);
+//   const [dates, setDates] = useState<any>([]);
+//   const [open, setOpen] = useState(false);
+//   const [imageopen, setImageOpen] = useState(false);
+//   const [selectedDate, setSelectedDate] = useState([]);
+//   const [pplCount, setPplCount] = useState<any>({
+//     adult: 1,
+//     infant: 0,
+//     pet: 0,
+//   });
+//   const [activeButton, setActiveButton] = useState("Day");
+//   const handleButtonClick = (button: any) => {
+//     setActiveButton(button);
+//   };
+
+//   const [isDrawerOpen, setDrawerOpen] = useState(false);
+//   const [responsiveView, setResponsiveView] = useState<any>("");
+//   const [activeSection, setActiveSection] = useState('section1');
+//   const sectionIds = ['section1', 'section2', 'section3', 'section4', 'section5'];
+//   const [isSticky, setIsSticky] = useState(false);
+//   const [stickyBtn, setstickyBtn] = useState(false)
+
+//   const [search, setSearch] = useState(false);
+//   const [checkin, setCheckin] = useState(false);
+//   const [guest, setGuest] = useState(false);
+//   const [contacthost, setContacthost] = useState<any>({});
+//   const [galleryImage, setGalleryImage] = useState([
+//     {
+//       img: "https://a0.muscache.com/im/pictures/b7c9264d-73c9-45c3-882e-6e9577d63d68.jpg",
+//       title: "CoverImage",
+//       rows: 2,
+//       cols: 2,
+//     },
+//     {
+//       img: "https://a0.muscache.com/im/pictures/4588d88f-0224-42f4-94cb-594f4d362fba.jpg",
+//       title: "gallery1",
+//     },
+//     {
+//       img: "https://a0.muscache.com/im/pictures/150e47d8-76b8-4233-8724-cbbd12880848.jpg",
+//       title: "gallery2",
+//     },
+//     {
+//       img: "https://a0.muscache.com/im/pictures/4588d88f-0224-42f4-94cb-594f4d362fba.jpg",
+//       title: "gallery3",
+//     },
+//     {
+//       img: "https://a0.muscache.com/im/pictures/150e47d8-76b8-4233-8724-cbbd12880848.jpg",
+//       title: "gallery4",
+//     },
+//   ]);
+//   const { estimation } = useSelector((state: any) => state.bookingEstimation)
+
+//   useEffect(() => {
+//     if (dates.length === 2) {
+//       const bodyData: any = {
+//         bookingType: activeButton,
+//         startDate: formatedDatefn(dates[0]?.format()),
+//         endDate: formatedDatefn(dates[dates.length - 1]?.format()),
+//         adults: pplCount.adult,
+//         children: pplCount.infant,
+//         pets: pplCount.pet,
+//         id: ids,
+//         // discountCode:discountCode
+//       };
+//       dispatch(fetchBookingData(ids, bodyData));
+//     }
+//   }, [dates, pplCount])
+//   const handleClickOpen = () => {
+//     setOpen(true);
+//   };
+
+//   const handleClose = () => {
+//     setOpen(false);
+//   };
+
+//   const handleClickImageOpen = () => {
+//     setImageOpen(true);
+//     setOpen(false);
+//   };
+
+//   const handlemodalImageClose = () => {
+//     setOpen(true);
+//     setImageOpen(false);
+//   };
+//   const theme = useTheme();
+//   const [activeStep, setActiveStep] = useState(0);
+//   const [expanded, setExpanded] = React.useState<any>(false);
+
+//   const handleChange = (panel: any) => (event?: any, isExpanded?: any) => {
+//     setExpanded(isExpanded ? panel : false);
+//   };
+
+//   const handleIncrement = (value: any) => {
+//     setPplCount({
+//       ...pplCount,
+//       [value]: pplCount[value] + 1,
+//     });
+//   };
+
+//   const handleDecrement = (value: any) => {
+//     setPplCount({
+//       ...pplCount,
+//       [value]: pplCount[value] - 1,
+//     });
+//   };
+
+//   const togglecheckin = () => {
+//     setCheckin(!checkin);
+//     setSearch(false);
+//     setGuest(false);
+//   };
+
+//   const handleDateChange = (date: any) => {
+//     setSelectedDate(date);
+//   };
+//   const [discountCode, setDiscountCode] = useState("");
+
+//   const handleDiscountCodeChange = (event: any) => {
+//     const newDiscountCode = event.target.value.toUpperCase();
+//     setDiscountCode(newDiscountCode);
+//   };
+
+//   const formatedDatefn = (date: any) => {
+//     if (typeof date === "string" && date.length > 0) {
+//       let newDate: any = new Date(date.split("/").reverse().join("-"));
+//       newDate = newDate.toISOString();
+//       return newDate;
+//     } else {
+//       return null;
+//     }
+//   };
+
+
+//   const refs = [useRef(null), useRef(null), useRef(null), useRef(null), useRef(null)]
+//   let iref = 0;
+//   const sectionRefs = sectionIds.reduce((acc: any, sectionId: any) => {
+//     acc[sectionId] = refs[iref];
+//     ++iref;
+//     return acc;
+//   }, {});
+
+//   const scrollToSection = (refName: any) => {
+//     const sectionRef = sectionRefs[refName];
+//     if (sectionRef && sectionRef.current) {
+//       sectionRef.current.scrollIntoView({ behavior: 'smooth' });
+//     }
+//   };
+
+//   useEffect(() => {
+//     const handleScroll = () => {
+//       const threshold = 650;
+//       const threshold2 = 2550;
+//       const scrolled = window.scrollY;
+//       setIsSticky(scrolled > threshold);
+//       setstickyBtn(scrolled > threshold2)
+//     };
+
+//     window.addEventListener('scroll', handleScroll);
+//     return () => {
+//       window.removeEventListener('scroll', handleScroll);
+//     };
+//   }, [sectionRefs]);
+
+
+//   const searchParams: any = useSearchParams();
+
+//   const ids = searchParams.get("id");
+//   useEffect(() => {
+//     const from = searchParams.get("from");
+//     const to = searchParams.get("to");
+//     const fromDate = from
+//       ? new DateObject({
+//         date: new Date(from),
+//         format: "DD/MM/YYYY",
+//       })
+//       : null;
+//     const toDate = to
+//       ? new DateObject({
+//         date: new Date(to),
+//         format: "DD/MM/YYYY",
+//       })
+//       : null;
+//     if (from && to) {
+//       setDates([fromDate, toDate]);
+//     } else if (from) {
+//       setDates([fromDate]);
+//     } else {
+//       setDates([]);
+//     }
+//   }, []);
+//   const userId = typeof window !== "undefined" ? localStorage?.getItem("appUserId") : null;
+//   const [list, setlist] = useState<string[]>([])
+
+//   const fetchData = async () => {
+//     try {
+//       setLoading(true);
+//       const res = await dispatch(getListingData(ids, userId));
+//       if (res.statusCode === 200) {
+//         const list = res.data.listing[0];
+//         setListData(list);
+//         const bedCountArry = list.accomodation.bedRoomBedtype.map((item: any) => item.bedCount);
+//         dispatch(bedsCount(bedCountArry.reduce((bedSum: any, a: any) => bedSum + a, 0)));
+//         dispatch(addListPrice(list.priceData[0].pricing.perDay));
+//         dispatch(
+//           setCoordinate({
+//             latitude: list.address.coordinates[0],
+//             longitude: list.address.coordinates[1],
+//           })
+//         );
+//         if (list.attachmentData.length > 0 && list.attachmentData[0].image) {
+//           const images = list.attachmentData[0].image;
+//           setGalleryImage((item) => {
+//             item[0].img = APIURLS.baseUrl + images.coverImage;
+//             images.groupImage.forEach((group: any, index: number) => {
+//               if (item[index + 1]) {
+//                 item[index + 1].img = APIURLS.baseUrl + group.imagePath;
+//               }
+//             });
+//             return item;
+//           });
+//         }
+//         const coverImage = {
+//           imagePath: list.attachmentData[0].image.coverImage,
+//           _id: 'coverimage001'
+//         }
+//         const groupImage = list.attachmentData[0].image.groupImage;
+//         dispatch(addArrImage([coverImage, ...groupImage]));
+//         setMaxNight(list.priceData[0]?.bookingType.maximumNight)
+
+//         const blockedDate = list.priceData[0]?.blockedDates
+
+//         if (Array.isArray(blockedDate) && blockedDate.length > 0) {
+//           const lists: string[][] = [];
+//           blockedDate?.map((date: any) => {
+//             const startDate = new Date(date.start);
+//             const endDate = new Date(date.end);
+//             const dates = getDatesBetween(startDate, endDate);
+//             lists.push(dates);
+//           });
+//           setlist(lists.flat());
+//         }
+//         dispatch(getListData(list));
+//         setLoading(false);
+//       } else {
+//         console.error(`API request failed with status: ${res.status}`);
+//         setLoading(false);
+//       }
+//     } catch (error) {
+//       console.error(error);
+//       setLoading(false);
+//     }
+//   };
+//   useEffect(() => {
+//     const userId: any = localStorage?.getItem("appUserId");
+//     setUseridlocal(userId);
+
+//     if (isAuth) {
+//       fetchWishList();
+//     }
+//   }, []);
+
+//   const date1 = dayjs(formatedDatefn(dates[dates.length - 1]?.format()));
+//   // const night = date1.diff(formatedDatefn(dates[0]?.format()), "day") || 1;
+
+//   const bodyData: any = {
+//     bookingType: activeButton,
+//     startDate: formatedDatefn(dates[0]?.format()),
+//     endDate: formatedDatefn(dates[dates.length - 1]?.format()),
+//     adults: pplCount.adult,
+//     children: pplCount.infant,
+//     pets: pplCount.pet,
+//     id: ids,
+//     // discountCode:discountCode
+//   };
+//   const queryString = Object.keys(bodyData)
+//     .map((key) => `${key}=${encodeURIComponent(bodyData[key])}`)
+//     .join("&");
+
+//   const handleReserve = async () => {
+//     if (dates.length > 1) {
+//       const url: any = APICONSTANT.estimation + `/${ids}?${queryString}`;
+//       try {
+//         dispatch(isLoadingPayment(true))
+//         const res = await getApiMethod(url);
+//         if (res.statusCode === 200) {
+//           dispatch(getBookingEstimationSuccess(res.data.estimation))
+//           router.push(`booking?${queryString}`);
+//         } else if (res.response) {
+//           dispatch(isLoadingPayment(false))
+//           dispatch(addAlert({
+//             isOpen: true,
+//             message: res.response.data.message,
+//             type: "error",
+//             severity: "error",
+//           }));
+
+//         }
+//       } catch (error) {
+//         dispatch(isLoadingPayment(false))
+//       }
+//     } else {
+//       scrollToSection(`section5`)
+//       setCheckin(!checkin);
+//     }
+//   };
+
+//   const openDrawer = async () => {
+//     if (dates.length > 1) {
+
+//       const url: any = APICONSTANT.estimation + `/${ids}?${queryString}`;
+//       try {
+//         dispatch(isLoadingPayment(true))
+//         const res = await getApiMethod(url);
+//         if (res.statusCode === 200) {
+//           router.push(`booking?${queryString}`);
+//         }
+//       } catch (error) {
+//         dispatch(isLoadingPayment(false))
+//         alert(error);
+//       }
+//     } else {
+//       setDrawerOpen(true);
+//     }
+//   };
+
+//   const closeDrawer = () => {
+//     setDrawerOpen(false);
+//   };
+
+//   useEffect(() => {
+//     dispatch(isLoadingPayment(false))
+//     fetchData();
+//   }, []);
+
+//   const createdDate = dayjs(
+//     listData.providerData?.verifiedDate.split("T")[0]
+//   ).toObject();
+
+//   const handleResize = () => {
+//     const windowWidth = window.innerWidth;
+
+//     const breakpoints = [
+//       { name: "xs", width: 0, maxWidth: 575 },
+//       { name: "sm", width: 576, maxWidth: 767 },
+//       { name: "md", width: 768, maxWidth: 991 },
+//       { name: "lg", width: 992, maxWidth: 1199 },
+//       { name: "xl", width: 1200, maxWidth: 1399 },
+//       { name: "xxl", width: 1400 },
+//     ];
+
+//     let responsiveVw =
+//       breakpoints.find(
+//         (bp: any) => windowWidth >= bp?.width && windowWidth <= bp?.maxWidth
+//       )?.name || "xxl";
+
+//     if (responsiveVw !== responsiveView) {
+//       setResponsiveView(responsiveVw);
+//     }
+//   };
+
+//   useEffect(() => {
+//     handleResize();
+
+//     window.addEventListener("resize", handleResize);
+
+//     return () => {
+//       window.removeEventListener("resize", handleResize);
+//     };
+//   }, []);
+//   const [showFullReviewIndex, setShowFullReviewIndex] = useState(null);
+
+//   const toggleReviewVisibility = (index: any) => {
+//     setShowFullReviewIndex(index === showFullReviewIndex ? null : index);
+//   };
+
+//   const createQueryString = useCallback(
+//     (name: string, value: string) => {
+//       const params: any = new URLSearchParams(ids);
+//       params.set(name, value);
+//       return params.toString();
+//     },
+//     [ids]
+//   );
+
+//   //   const searchParams: any = useSearchParams();
+//   const slugid = searchParams.get("id");
+//   const [useridlocal, setUseridlocal] = useState<any>("");
+//   const [socialModalOpen, setSocialModalOpen] = useState(false);
+//   const [wishModal, setWishModal] = useState(false);
+//   const [wishCollectionModal, setWishCollectionModal] = useState(false);
+//   const [CollectionName, setCollectionName] = useState('');
+//   const [collectionId, setcollectionId] = useState(null)
+//   const handleCloseModal = () => {
+//     setWishModal(false)
+//   }
+//   const handleOpenModal = () => {
+//     setWishModal(false)
+//     setWishCollectionModal(true)
+//   }
+//   const handleCloseModalCollection = () => {
+//     setWishCollectionModal(false)
+//   }
+//   const handleInputChange = (event: any) => {
+//     setCollectionName(event.target.value);
+//   }
+//   const [data, setData] = useState({
+//     collectionData: [],
+//     total: 0
+//   });
+//   const fetchWishList = async () => {
+//     try {
+//       const res = await getApiMethod(APICONSTANT.wishlistCollection);
+//       if (res.statusCode === 200) {
+//         setData({
+//           collectionData: res.data.wishLists,
+//           total: res.data.wishLists.length,
+//         })
+//       }
+//     } catch (err) {
+//       console.error(err)
+//     }
+//   }
+
+//   const handleButtonClickShare = () => {
+//     setSocialModalOpen(true)
+//   }
+
+//   const handleWishList = (collectionId?: any) => async () => {
+//     try {
+//       let postData: any = {
+//         collectionName: CollectionName,
+//         listingId: ids,
+//         collectionId: collectionId,
+//       };
+//       const res = await postApiMethod(APICONSTANT.wishList, postData);
+//       if (res.statusCode === 200) {
+//         setWishModal(false)
+//         setWishCollectionModal(false)
+//         fetchData()
+//         dispatch(addAlert({
+//           isOpen: true,
+//           message: res.message,
+//           type: "success",
+//           severity: "success",
+//         }));
+//       }
+//     } catch (err) {
+//       console.error(err)
+//     }
+//   }
+//   const handleButtonHeart = async () => {
+//     if (!isAuth) {
+//       dispatch(setModal('SignupModal' as any));
+//     } else {
+//       if (listData.wishlist) {
+//         try {
+//           const res = await postApiMethod(APICONSTANT.wishList, { listingId: listData._id });
+//           if (res.statusCode === 200) {
+//             fetchData();
+//             dispatch(addAlert({
+//               isOpen: true,
+//               message: res.message,
+//               type: "success",
+//               severity: "success",
+//             }));
+//           } else {
+//             // Handle other status codes or conditions if needed
+//             console.error(res.message);
+//           }
+//         } catch (err) {
+//           // Handle API call errors
+//           console.error(err);
+//         }
+//       } else {
+//         setWishModal(true);
+//       }
+//     }
+//   };
+
+//   // calculate min date from selected date
+//   // const getMinDate = useMemo(() => {
+//   //   const minSelectableDate = new DateObject().add(1, "days");
+//   //   // if from date is selected & to date is unselected
+//   //   if (dates && dates.length === 1) {
+//   //     // if maximum night from both sides are within the today date
+//   //     const maxBeforeSelectable = new DateObject(dates[0]).subtract(maxNight, "days");
+
+//   //     if (maxBeforeSelectable.valueOf() > minSelectableDate.valueOf()) {
+//   //       let currentDatePointer = new DateObject(dates[0]);
+//   //       // adjust min date based on blocked dates
+//   //       for (let i = 0; i < maxNight; ++i) {
+//   //         currentDatePointer.subtract(1, "days");
+
+//   //         if (list.includes(currentDatePointer.format('DD-MM-YYYY'))) {
+//   //           return currentDatePointer.add(1, "days");;
+//   //         }
+//   //       }
+
+//   //       return currentDatePointer.add(1, "days");
+//   //     }
+//   //   }
+//   //   return minSelectableDate;
+//   // }, [dates])
+
+//   // calculate max date from selected date
+//   // const getMaxDate = useMemo(() => {
+
+//   //   const maxSelectableDate = new DateObject().add(180, "days");
+//   //   // if from date is selected & to date is unselected
+//   //   if (dates && dates.length === 1 && maxNight > 1) {
+//   //     const maxAfterSelectable = new DateObject(dates[0]).add(maxNight, "days");
+//   //     if (maxSelectableDate.valueOf() > maxAfterSelectable.valueOf()) {
+
+//   //       let currentDatePointer = new DateObject(dates[0]);
+//   //       // adjust min date based on blocked dates
+//   //       for (let i = 0; i < maxNight; ++i) {
+//   //         currentDatePointer.add(1, "days");
+//   //         if (list.includes(currentDatePointer.format('DD-MM-YYYY'))) {
+//   //           return currentDatePointer.subtract(1, "days");
+//   //         }
+//   //       }
+//   //       currentDatePointer.subtract(1, "days");
+//   //     }
+//   //   }
+
+//   //   // maximum 6 months from current Date
+//   //   return maxSelectableDate;
+//   // }, [dates])
+
+//   const getMinDate = useMemo(() => {
+//     const afterSelect = new DateObject(dates[0])
+//     const minSelectableDate = new DateObject().add(2, "days")
+//     const condition = dates && dates.length > 0 && dates.length < 2
+//     if (condition) {
+//       return afterSelect
+//     } else {
+//       return minSelectableDate
+//     }
+//   }, [dates])
+
+//   const getMaxDate = useMemo(() => {
+//     const maxDate = new DateObject(dates[0]).add(maxNight, "days")
+//     const afterSelect = ""
+//     const condition = dates && dates.length > 0 && dates.length < 2
+//     if (condition) {
+//       return maxDate
+//     } else {
+//       return afterSelect
+//     }
+//   }, [dates])
+
+//   return (
+//     <>
+//       {loader &&
+//         <Loader />
+//       }
+//       <div className={``}>
+//         {responsiveView === "sm" || responsiveView === "xs" ? <RoomHeader listData={listData} /> :
+//           <>
+//             <Header page={true} center="hide" />
+//             {isSticky &&
+//               <div className={`${styles.scroll_section} border-bottom`}>
+//                 <div className={`${styles.scroll_header} container d-flex justify-content-between`}>
+//                   <div className={`${styles.scroll_menu}`}>
+//                     {
+//                       ['Photos', 'Amenities', 'Reviews', 'Location'].map((data: string, d: number) => (
+//                         <h6
+//                           key={d}
+//                           onClick={() => scrollToSection(`section${d + 1}`)}
+//                           className={
+//                             activeSection === `section${d + 1}` ?
+//                               styles.active :
+//                               ''
+//                           }
+//                         >
+//                           {data}
+//                         </h6>
+//                       ))
+//                     }
+//                   </div>
+//                   {stickyBtn &&
+//                     <div className="d-flex justify-content-end align-items-center">
+//                       <div className="d-flex align-items-baseline">
+//                         <h5 className={`mb-0 me-1`}>{CurrencyList.currency}{price}</h5>
+//                         <p className={`mb-0 me-3`}> night</p>
+//                       </div>
+//                       {listData.isBooking ?
+//                         <></>
+//                         :
+//                         <button
+//                           className={`${styles.reservebtn}`}
+//                           onClick={handleReserve}
+//                         // onClick={() => scrollToSection(`section5`)}
+//                         >
+//                           {dates.length > 1 ? "Reserve" : "Check availability"}
+//                         </button>
+//                       }
+
+//                     </div>
+//                   }
+//                 </div>
+//               </div>
+//             }
+//           </>
+//         }
+
+//         {
+//           loading ?
+//             <div className={`${styles.detailpage} container mt-4`}
+//             >
+//               <div className={`${styles.place}`}>
+//                 <div className={`${styles.detail_header}`}>
+//                   <h3 className="card-title placeholder-glow mt-4">
+//                     <span className="placeholder col-6"></span>
+//                   </h3>
+//                   <p className="card-text placeholder-glow">
+//                     <span className="placeholder col-4"></span>
+//                   </p>
+//                 </div>
+//                 <div className={`${styles.gridLayouts} border-0 card placeholder-glow mt-5`}>
+//                   <ImageList
+//                     key={galleryImage[0].img}
+//                     sx={{
+//                       width: "100%",
+//                       height: 500,
+//                       gridTemplateRows: "49% 50%",
+//                     }}
+//                     variant="quilted"
+//                     cols={4}
+//                     className={`${styles.imagesection} m-0`}
+//                   >
+//                     {galleryImage.map((item: any, i: any) => (
+//                       <ImageListItem
+//                         key={i}
+//                         cols={item.cols || 1}
+//                         rows={item.rows || 1}
+
+//                       >
+//                         <p className="card-img-top placeholder h-100"></p>
+//                       </ImageListItem>
+//                     ))}
+//                   </ImageList>
+//                 </div>
+//                 <div className={`${styles.skeleton} mt-5`}>
+//                   <div className={`${styles.detail_header}`}>
+//                     <p className="card-title placeholder-glow">
+//                       <span className="placeholder col-8"></span>
+//                     </p>
+//                     <p className="card-text placeholder-glow">
+//                       <span className="placeholder col-5"></span>
+//                     </p>
+//                   </div>
+//                   <div className={`${styles.skeleton}`}>
+//                     <div className="d-flex justify-content-end card-circle placeholder-glow me-4">
+//                       <p className="placeholder col-1" style={{
+//                         borderRadius: '50%',
+//                         width: '50px',
+//                         height: '50px'
+//                       }}></p>
+//                     </div>
+//                     <div>
+//                       <p className="card-text placeholder-glow">
+//                         <span className="placeholder col-6"></span>
+//                       </p>
+//                       <h3 className="card-title placeholder-glow">
+//                         <span className="placeholder col-12"></span>
+//                       </h3>
+//                     </div>
+//                   </div>
+//                 </div>
+//               </div>
+//             </div>
+//             :
+//             <div className={`${styles.detailpage} container mt-4`}>
+//               <div ref={sectionRefs.section1} id="section1"
+//                 className={`${styles.detail_header} d-flex justify-content-between align-items-center`}
+//               >
+//                 {responsiveView === "sm" || responsiveView === "xs" ? (
+//                   <></>
+//                 ) : (
+//                   <h3 className=" mt-4 mb-0">{listData.propertyName}</h3>
+//                 )}
+//                 {responsiveView === "sm" || responsiveView === "xs" ? null :
+//                   <div className="d-flex">
+//                     <div className="me-3">
+//                       <button onClick={handleButtonClickShare}
+//                         className={`btn d-flex align-items-center ${styles.btn_ratings}`}
+//                       >
+//                         <ShareIcon
+//                           className="me-2"
+//                           style={{
+//                             display: "block",
+//                             fill: "none",
+//                             height: "16px",
+//                             width: "16px",
+//                             stroke: "currentcolor",
+//                             strokeWidth: "2",
+//                             overflow: "visible",
+//                           }}
+//                         />
+//                         <span>Share</span>
+//                       </button>
+//                     </div>
+//                     <div className="me-1">
+//                       <button onClick={handleButtonHeart}
+//                         className={`btn d-flex align-items-center ${styles.btn_ratings}`}
+//                       >
+//                         <HeartIcon
+//                           className="me-2"
+//                           width="16px"
+//                           height="16px"
+//                           color={listData.wishlist ? "rgb(255, 56, 92)" : "none"}
+//                           style={{
+//                             display: "block",
+//                             stroke: !listData.wishlist
+//                               ? "currentcolor"
+//                               : "rgb(255, 56, 92)",
+//                             strokeWidth: 2,
+//                             overflow: "visible",
+//                           }}
+//                         />
+//                         <span>Save</span>
+//                       </button>
+//                     </div>
+//                   </div>
+//                 }
+//               </div>
+//               <div>
+//                 {responsiveView === "sm" || responsiveView === "xs" ? null :
+//                   <div className={`${styles.gridLayouts} position-relative`}>
+//                     {responsiveView === "sm" || responsiveView === "xs" ? (
+//                       <div className={`${styles.singleImage}`}>
+//                         {galleryImage ? (
+//                           <img
+//                             {...srcset(galleryImage[0].img, 1, 1)}
+//                             alt=""
+//                             loading="lazy"
+//                             onClick={handleClickOpen}
+//                             style={{ width: "100%", height: "250px" }}
+//                           />
+//                         ) : (
+//                           <Skeleton
+//                             variant="rectangular"
+//                             sx={{ width: "100%", height: "400px" }}
+//                           />
+//                         )}
+//                       </div>
+//                     ) : (
+//                       <ImageList
+//                         key={galleryImage[0].img}
+//                         sx={{
+//                           width: "100%",
+//                           height: 500,
+//                           gridTemplateRows: "49% 50%",
+//                         }}
+//                         variant="quilted"
+//                         cols={4}
+//                         className={`${styles.imagesection} my-3`}
+//                       >
+//                         {galleryImage.map((item: any, i: any) => (
+//                           <ImageListItem
+//                             key={i}
+//                             cols={item.cols || 1}
+//                             rows={item.rows || 1}
+//                           >
+//                             <img
+//                               {...srcset(item.img, 121, item.rows, item.cols)}
+//                               alt={item.title}
+//                               loading="lazy"
+//                               onClick={handleClickOpen}
+//                             />
+//                           </ImageListItem>
+//                         ))}
+//                       </ImageList>
+//                     )}
+
+//                     <button
+//                       className={`btn ${styles.btn_allimg} d-flex align-items-center`}
+//                       onClick={handleClickOpen}
+//                     >
+//                       <AllImagesIcon
+//                         className="me-1"
+//                         style={{
+//                           display: "block",
+//                           height: "16px",
+//                           width: "16px",
+//                           fill: "currentcolor",
+//                         }}
+//                       />
+//                       <span>Show all photos</span>
+//                     </button>
+//                   </div>
+//                 }
+//               </div>
+//               <div
+//                 className={`${styles.bottomsec} pt-3 pb-5 d-flex justify-content-between flex-wrap position-relative `}
+//               >
+//                 <div
+//                   className={
+//                     responsiveView === "sm" || responsiveView === "xs"
+//                       ? "col-md-7 w-100"
+//                       : "col-md-7"
+//                   }
+//                 >
+//                   <div className="d-flex justify-content-between align-items-center col-md-12">
+//                     <div className="">
+//                       {responsiveView === "sm" || responsiveView === "xs" ? (
+//                         <h1
+//                           style={{
+//                             marginBottom: "10px",
+//                             fontSize: "20px",
+//                             fontWeight: "bold",
+//                           }}
+//                         >
+//                           {listData.propertyName}
+//                         </h1>
+//                       ) : (
+//                         <></>
+//                       )}
+//                       <h5 className=" text-xs">
+//                         {listData?.propertyTypeName} in {listData.address?.city},{" "}
+//                         {listData.address?.state}
+//                       </h5>
+
+//                       <div className="d-sm-flex">
+//                         <div className={`mr-2 col-xs-12 col-sm-auto`}>
+//                           <p className="m-0">
+//                             {Number(listData?.guest?.adult) + Number(listData?.guest?.children)}&nbsp;guests &#183;
+//                           </p>
+//                         </div>
+//                         <div className={`mr-2 col-xs-12 col-sm-auto`}>
+//                           <p className="m-0">
+//                             &nbsp;{listData?.accomodation?.bedRoomCount} bedrooms
+//                             &#183;
+//                           </p>
+//                         </div>
+//                         <div className={`mr-2 col-xs-12 col-sm-auto`}>
+//                           <p className="m-0">
+//                             &nbsp;{ListInfo.beds}{" "}
+//                             beds &#183;
+//                           </p>
+//                         </div>
+//                         <div className={`col-xs-12 col-sm-auto`}>
+//                           <p className="m-0">
+//                             &nbsp;{listData?.accomodation?.bathRoom?.bathRoomCount}{" "}
+//                             bathroom
+//                           </p>
+//                         </div>
+//                       </div>
+//                       <div className="">
+//                         <div className="d-flex align-items-center">
+//                           <p className="me-1 d-flex align-items-center">
+//                             <span className="me-2 mb-1">
+//                               <RatingIcon
+//                                 width="20"
+//                                 height="20"
+//                                 fill="currentColor"
+//                               />
+//                             </span>
+//                             {listData.totalRatingCount !== 0
+//                               ? listData.totalRatingCount
+//                               : "No reviews yet"}
+//                             <span className="ms-1">.</span>
+//                           </p>
+//                           {listData.totalReviewCount !== 0 && (
+//                             <div className="me-1">
+//                               {listData.totalReviewCount} reviews
+//                             </div>
+//                           )}
+//                         </div>
+//                       </div>
+//                     </div>
+//                   </div>
+//                   <div className='my-3'>
+//                     <div className={`${styles.divider}`}></div>
+//                   </div>
+//                   <div>
+//                     <RulesSection />
+//                   </div>
+//                   <div className='my-3'>
+//                     <div className={`${styles.divider}`}></div>
+//                   </div>
+//                   <div>
+//                     <HostDetails />
+//                   </div>
+//                   <div className='my-3'>
+//                     <div className={`${styles.divider}`}></div>
+//                   </div>
+//                   <div>
+//                     <RoomsDescription
+//                       desc={listData?.propertyDesc}
+//                       data={listData?.amenityCategories}
+//                     />
+//                   </div>
+//                   <div className='my-3'>
+//                     <div className={`${styles.divider}`}></div>
+//                   </div>
+//                   <div>
+//                     <BedCarousel />
+//                   </div>
+//                   <div className='my-3' ref={sectionRefs.section2} id="section2">
+//                     <div className={`${styles.divider}`}></div>
+//                   </div>
+//                   <div>
+//                     <AmenitiesSection />
+//                   </div>
+//                   <div className='my-3'>
+//                     <div className={`${styles.divider}`}></div>
+//                   </div>
+//                   <div
+//                     className={
+//                       responsiveView === "sm" || responsiveView === "xs"
+//                         ? "d-none"
+//                         : "col-md-12 d-md-block"
+//                     }
+//                   >
+//                     <Calendar
+//                       range
+//                       minDate={getMinDate}
+//                       maxDate={getMaxDate}
+//                       highlightToday={false}
+//                       className="rmdpprime"
+//                       numberOfMonths={2}
+//                       onChange={(date: any) => {
+//                         const fromDate = date[0]
+//                           ? date[0].format("YYYY-MM-DD")
+//                           : null;
+//                         const toDate = date[1]
+//                           ? date[1].format("YYYY-MM-DD")
+//                           : null;
+
+//                         const currentParams = new URLSearchParams(searchParams);
+//                         if (date[0])
+//                           currentParams.set("from", fromDate);
+//                         else
+//                           currentParams.delete("from");
+
+//                         if (date[1]) currentParams.set("to", toDate);
+//                         else
+//                           currentParams.delete("to");
+//                         // router.replace(`?${currentParams}`, { scroll: false });
+//                         window.history.replaceState({ path: '?' + currentParams.toString() }, '', '?' + currentParams.toString());
+
+//                         setDates(date);
+//                       }}
+//                       mapDays={({ date }) => {
+//                         const formattedDate = date.format('DD-MM-YYYY');
+//                         const isblocked = list.includes(formattedDate);
+//                         if (isblocked) {
+//                           return {
+//                             disabled: true,
+//                             style: { backgroundColor: '#ccc', color: "#fff" },
+//                             onClick: () => toast.info("This date is unavailable"),
+//                           };
+//                         }
+//                       }}
+//                       value={dates}
+//                       rangeHover
+//                       format="DD/MM/YYYY"
+//                     />
+//                     <div className="text-end">
+//                       <button style={{ backgroundColor: 'transparent', border: '1px solid transparent', textDecoration: 'underline', textTransform: 'capitalize' }} onClick={() => {
+//                         const currentParams = new URLSearchParams(searchParams);
+//                         currentParams.delete("from");
+//                         currentParams.delete("to");
+//                         window.history.replaceState({ path: '?' + currentParams.toString() }, '', '?' + currentParams.toString());
+//                         setDates([])
+//                       }}
+//                       > Clear Dates</button>
+//                     </div>
+//                   </div>
+//                   <div className='my-3'>
+//                     <div className={`${styles.divider}`}></div>
+//                   </div>
+//                   {/* {responsiveView === 'sm' || responsiveView === "xs" ? null :   <CalendarSection/>} */}
+//                 </div>
+//                 <div
+//                   className={
+//                     responsiveView === "sm" || responsiveView === "xs"
+//                       ? "d-none"
+//                       : "col-md-4 d-md-block"
+//                   }
+//                 >
+//                   <div className={`${styles.stickysidebar}`} ref={sectionRefs.section5} id="section5">
+//                     {/* <div className={`${styles.dayPicker}`}>
+// 									<button onClick={() => handleButtonClick('Hour')} className={`${styles.buttonhours} ${activeButton === 'Hour' ? styles.active : ''}`}>Hour</button>
+// 									<button onClick={() => handleButtonClick('Day')} className={`${styles.buttonday} ${activeButton === 'Day' ? styles.active : ''}`}>Day</button>
+// 								</div> */}
+//                     <div className="d-flex align-items-baseline">
+//                       <h2 className={`me-2`}>{CurrencyList.currency}{price}</h2>
+//                       <h5> night</h5>
+//                       {/* <p>4.79 ·
+// 										68 reviews</p> */}
+//                     </div>
+//                     <div className="my-3">
+//                       <div className="position-relative">
+//                         <div
+//                           className="d-flex mt-2"
+//                           style={{
+//                             border: "1px solid grey",
+//                             borderBottom: "none",
+//                             borderTopLeftRadius: 10,
+//                             borderTopRightRadius: 10,
+//                           }}
+//                         >
+//                           <div ref={sectionRefs.section5} id="section5"
+//                             className={`${styles.btn_checkin} w-100`}
+//                             style={{
+//                               borderRight: "1px solid grey",
+//                             }}
+//                             onClick={togglecheckin}
+//                           >
+//                             <p className={`${styles.uppercase}`}>check-in</p>
+//                             <>
+//                               {dates.length !== 0 ? (
+//                                 <p>{dates[0].format()}</p>
+//                               ) : (
+//                                 <p>Add dates</p>
+//                               )}
+//                             </>
+//                           </div>
+//                           <div
+//                             className={`${styles.btn_checkout} w-100`}
+//                             style={{
+//                               borderRight: "none",
+//                             }}
+//                             onClick={togglecheckin}
+//                           >
+//                             <p className={`${styles.uppercase}`}>checkout</p>
+//                             <>
+//                               {dates.length > 1 ? (
+//                                 <p>{dates[dates.length - 1].format()}</p>
+//                               ) : (
+//                                 <p> Add dates</p>
+//                               )}
+//                             </>
+//                           </div>
+//                         </div>
+//                         {checkin && (
+//                           <>
+//                             <div className={`${styles.search_region}`}>
+//                               <Calendar
+//                                 value={dates}
+//                                 onChange={(date: any) => {
+//                                   const fromDate = date[0]
+//                                     ? date[0].format("YYYY-MM-DD")
+//                                     : null;
+//                                   const toDate = date[1]
+//                                     ? date[1].format("YYYY-MM-DD")
+//                                     : null;
+
+//                                   const currentParams = new URLSearchParams(
+//                                     searchParams
+//                                   );
+//                                   currentParams.set("from", fromDate);
+//                                   if (toDate) currentParams.set("to", toDate);
+//                                   // router.replace(`?${currentParams}`, {
+//                                   //   scroll: false,
+//                                   // });
+//                                   window.history.replaceState({ path: '?' + currentParams.toString() }, '', '?' + currentParams.toString());
+
+//                                   setDates(date);
+//                                 }}
+//                                 minDate={getMinDate}
+//                                 maxDate={getMaxDate}
+//                                 mapDays={({ date }) => {
+//                                   const formattedDate = date.format('DD-MM-YYYY');
+//                                   const isblocked = list.includes(formattedDate);
+//                                   if (isblocked) {
+//                                     return {
+//                                       disabled: true,
+//                                       style: { backgroundColor: '#ccc', color: "#fff" },
+//                                       onClick: () => toast.info("This date is unavailable"),
+//                                     };
+//                                   }
+//                                 }}
+//                                 highlightToday={false}
+//                                 numberOfMonths={2}
+//                                 className="rmdpprime"
+//                                 range
+//                                 rangeHover
+//                                 format="DD/MM/YYYY"
+//                               />
+//                               <div className="text-end">
+//                                 <button style={{ backgroundColor: 'transparent', border: '1px solid transparent', textDecoration: 'underline', textTransform: 'capitalize' }} onClick={() => {
+//                                   const currentParams = new URLSearchParams(searchParams);
+//                                   currentParams.delete("from");
+//                                   currentParams.delete("to");
+//                                   window.history.replaceState({ path: '?' + currentParams.toString() }, '', '?' + currentParams.toString());
+//                                   setDates([])
+//                                 }}
+//                                 > Clear Dates</button>
+//                                 <button className="ms-3" style={{ backgroundColor: '#222', border: '1px solid #222', borderRadius: '4px', textDecoration: 'none', textTransform: 'capitalize', color: '#fff', padding: '4px' }}
+//                                   onClick={() => {
+//                                     setCheckin(!checkin);
+//                                   }}
+//                                 > Close</button>
+//                               </div>
+//                             </div>
+//                             <div
+//                               className={`${styles.backdrop}`}
+//                               onClick={() => {
+//                                 setCheckin(!checkin);
+//                               }}
+//                             />
+//                           </>
+//                         )}
+//                       </div>
+//                       {/* <DatePickerValue /> */}
+//                       <Accordion
+//                         disableGutters
+//                         elevation={0}
+//                         square
+//                         style={{
+//                           margin: 0,
+//                           border: "1px solid grey",
+//                           boxShadow: "none",
+//                           borderBottomLeftRadius: 10,
+//                           borderBottomRightRadius: 10,
+//                         }}
+//                         expanded={expanded === "panel1"}
+//                         onChange={handleChange("panel1")}
+//                       >
+//                         <AccordionSummary
+//                           style={{
+//                             paddingLeft: 12,
+//                             paddingRight: 12,
+//                           }}
+//                           expandIcon={<ExpandMoreIcon />}
+//                           aria-controls="panel1bh-content"
+//                           id="panel1bh-header"
+//                         >
+//                           <div className="d-flex flex-column m-0">
+//                             <span className={`${styles.uppercase}`}>Guests</span>
+//                             <span>
+//                               {pplCount.adult + pplCount.infant} guest
+//                               {pplCount.adult !== 1 ? "s" : ""}
+//                               {/* {pplCount.infant !== 0
+//                                 ? `, ${pplCount.infant} child${pplCount.infant > 1 ? "ren" : ""
+//                                 }`
+//                                 : ""} */}
+//                               {pplCount.pet !== 0
+//                                 ? `, ${pplCount.pet} Pet${pplCount.pet > 1 ? "s" : ""
+//                                 }`
+//                                 : ""}
+//                             </span>
+//                           </div>
+//                         </AccordionSummary>
+//                         <AccordionDetails
+//                           style={{
+//                             padding: 0,
+//                           }}
+//                         >
+//                           <>
+//                             <div className={`${styles.guests}`}>
+//                               <div
+//                                 className={`d-flex justify-content-between py-2`}
+//                               >
+//                                 <div className={`${styles.ppl_detail}`}>
+//                                   <p>Adults</p>
+//                                   <span>Ages 13+</span>
+//                                 </div>
+//                                 <div
+//                                   className={`d-flex justify-content-between align-items-center m-0`}
+//                                 >
+//                                   {/* {pplCount.adult >= 2 && ( */}
+//                                   <button
+//                                     disabled={pplCount.adult === 1}
+//                                     onClick={() => {
+//                                       handleDecrement("adult");
+//                                     }}
+//                                     className={`${styles.add_btn}`}
+//                                   >
+//                                     -
+//                                   </button>
+//                                   {/* )} */}
+//                                   <div className="px-3">{pplCount.adult}</div>
+//                                   <button
+//                                     onClick={() => {
+//                                       handleIncrement("adult");
+//                                     }}
+//                                     className={`${styles.del_btn}`}
+//                                     disabled={
+//                                       pplCount.adult >=
+//                                       parseInt(listData?.guest?.adult)
+//                                     }
+//                                   >
+//                                     +
+//                                   </button>
+//                                 </div>
+//                               </div>
+//                               <div
+//                                 className={`d-flex justify-content-between py-2`}
+//                               >
+//                                 <div className={`${styles.ppl_detail}`}>
+//                                   <p>Children</p>
+//                                   <span>Ages 2 - 12</span>
+//                                 </div>
+//                                 <div
+//                                   className={`d-flex justify-content-between align-items-center`}
+//                                 >
+//                                   {/* {pplCount.infant >= 1 && ( */}
+//                                   <button
+//                                     disabled={pplCount.infant === 0}
+//                                     onClick={() => {
+//                                       handleDecrement("infant");
+//                                     }}
+//                                     className={`${styles.add_btn}`}
+//                                   >
+//                                     -
+//                                   </button>
+//                                   {/* )} */}
+//                                   <div className="px-3">{pplCount.infant}</div>
+//                                   <button
+//                                     onClick={() => {
+//                                       handleIncrement("infant");
+//                                     }}
+//                                     className={`${styles.del_btn}`}
+//                                     disabled={
+//                                       pplCount.infant >=
+//                                       parseInt(listData?.guest?.children)
+//                                     }
+//                                   >
+//                                     +
+//                                   </button>
+//                                 </div>
+//                               </div>
+//                               <div
+//                                 className={`d-flex justify-content-between py-2`}
+//                               >
+//                                 <div className={`${styles.ppl_detail}`}>
+//                                   <p>Pets</p>
+//                                 </div>
+//                                 <div
+//                                   className={`d-flex justify-content-between align-items-center`}
+//                                 >
+//                                   {/* {pplCount.pet >= 1 && ( */}
+//                                   <button
+//                                     disabled={pplCount.pet === 0}
+//                                     onClick={() => {
+//                                       handleDecrement("pet");
+//                                     }}
+//                                     className={`${styles.add_btn}`}
+//                                   >
+//                                     -
+//                                   </button>
+//                                   {/* )} */}
+//                                   <div className="px-3">{pplCount.pet}</div>
+//                                   <button
+//                                     onClick={() => {
+//                                       handleIncrement("pet");
+//                                     }}
+//                                     className={`${styles.del_btn}`}
+//                                     disabled={
+//                                       pplCount.pet >=
+//                                       parseInt(listData?.guest?.pets)
+//                                     }
+//                                   >
+//                                     +
+//                                   </button>
+//                                 </div>
+//                               </div>
+//                               <div className="text-end">
+//                                 <button
+//                                   className="ms-3"
+//                                   style={{
+//                                     backgroundColor: 'transparent',
+//                                     border: '1px solid transparent',
+//                                     textDecoration: 'underline',
+//                                     textTransform: 'capitalize'
+//                                   }}
+//                                   onClick={() => setExpanded(false)}
+//                                 > Close</button>
+//                               </div>
+//                             </div>
+//                           </>
+//                         </AccordionDetails>
+//                       </Accordion>
+//                     </div>
+//                     {/* <div className={`${styles.discount}`}>
+// 									<input 
+// 									   type="text"
+// 									   name="discount"
+// 									   id="discount"
+// 									   placeholder="Enter Discount Code "
+// 									   onChange={handleDiscountCodeChange}
+// 									/>
+// 								</div> */}
+//                     <button
+//                       className={`${listData.isBooking ? styles.reservebtnDisable : styles.reservebtn}`}
+//                       onClick={handleReserve}
+//                       disabled={listData.isBooking}
+//                     >
+//                       {listData.isBooking ? "Can't reserve your own listings" :
+//                         (dates.length > 1 ? "Reserve" : "Check availability")
+//                       }
+//                     </button>
+
+
+//                     {dates.length > 1 && (
+//                       <div>
+//                         <div
+//                           className={`${styles.textdec} d-flex justify-content-between py-4`}
+//                         >
+//                           <p className={`${styles.text}`}>
+//                             {CurrencyList.currency}{estimation.perDay} x {estimation.nights} night
+//                           </p>
+//                           {/* <p>{CurrencyList.currency}{price * night}</p> */}
+//                           <p>{estimation.totalAmountBeforeTax}</p>
+//                         </div>
+//                         {estimation.taxAmount && estimation.taxAmount > 0 &&
+//                           <div
+//                             className={`${styles.textdec} d-flex justify-content-between pb-2`}
+//                           >
+//                             <p className={`${styles.text}`}>
+//                               Tax({estimation.taxPercentage}%)
+//                             </p>
+//                             <p>{CurrencyList.currency}{estimation.taxAmount}</p>
+//                           </div>
+//                         }
+//                         <div className='my-3'>
+//                           <div className={`${styles.divider}`}></div>
+//                         </div>
+//                         <div className={`d-flex justify-content-between`}>
+//                           <h5>Total</h5>
+//                           <h5>{CurrencyList.currency}{estimation.fareAmount ? estimation.fareAmount : estimation.perDay * estimation.nights}</h5>
+//                         </div>
+//                       </div>
+//                     )}
+//                   </div>
+//                 </div>
+//               </div>
+
+//               <div ref={sectionRefs.section3} id="section3">
+//                 <div>
+//                   <RatingsSection />
+//                 </div>
+//                 <div>
+//                   <ReviewSection />
+//                 </div>
+//               </div>
+//               {/* <div className='my-3'>
+//                 <div className={`${styles.divider}`}></div>
+//               </div> */}
+//               <div className={`py-4`} ref={sectionRefs.section4} id="section4">
+//                 <h5 className="py-2">Where you’ll be</h5>
+//                 <MapComponent readOnly={true} value={coordinate} auto="hide" />
+//                 <div className="mt-2 me-1">
+//                   <button className={`btn ${styles.btn_rating}`}>
+//                     {listData.address?.city} , {listData.address?.state}
+//                   </button>
+//                 </div>
+//               </div>
+//               {/* 
+//           <div className='my-3'>
+//             <div className={`${styles.divider}`}></div>
+//           </div>
+//           <div className={`${styles.bottomsec} py-3`}>
+//             <div className={`d-flex py-2`}>
+//               <div className={` me-3`}>
+//                 {profile ?
+//                   <Image src={profile?.startsWith('https') ? profile : APIURLS.baseUrl + profile} className={`${styles.imgradius}`} width={48} height={48} alt='' /> :
+//                   <FaUserCircle className={`${styles.user}`} />
+//                 }
+//               </div>
+//               <div>
+//                 <h2 className='mb-0'>Hosted by {Name}</h2>
+//                 <p>Joined in {Month} {createdDate.years}</p>
+//               </div>
+//             </div>
+//             <p>Identity verified</p>
+//             <div className={`py-2`}>
+//               <button onClick={() => router.push('/profiles/user')} className={`${styles.btnstyle}`}>Contact Host</button>
+//             </div>
+//             <p>To protect your payment, never transfer money or communicate outside of the <Website/> website or app.</p>
+//           </div> */}
+//             </div>
+//         }
+//         <Footer />
+//         {(responsiveView === "sm" || responsiveView === "xs") && (
+//           <div className={`${styles.responsive_nav}`}>
+//             <div className="d-flex justify-content-between">
+//               <p className="mb-0">
+//                 {CurrencyList.currency}&nbsp;{price}&nbsp;<span>night</span>
+//               </p>
+//               <div>
+//               <button onClick={openDrawer} className={`${styles.button}`}>
+//                   {dates.length > 1 ? "Reserve" : "Check availability"}
+//                 </button>
+
+//                 {/* <button
+//                         className={`${listData.isBooking ? styles. :styles.button}`}
+//                         onClick={openDrawer}
+//                         disabled={listData.isBooking}
+//                       >
+//                         {listData.isBooking  ?  "Can't reserve your own listings" :
+//                         (dates.length > 1 ? "Reserve" : "Check availability")
+//                         }
+//                       </button> */}
+//                 <MobilereserveBox
+//                   open={isDrawerOpen}
+//                   onClose={closeDrawer}
+//                   price={price}
+//                   listData={listData}
+//                   ids={ids}
+//                   maxNight={maxNight}
+//                   list={list}
+//                 />
+//               </div>
+//             </div>
+//           </div>
+//         )}
+//       </div>
+//       {open ? (
+//         <Dialog
+//           fullScreen
+//           open={open}
+//           onClose={handleClose}
+//           TransitionComponent={Transition}
+//         >
+//           <div className="d-flex justify-content-between align-items-center container my-4">
+//             <div className="d-flex justify-content-between">
+//               <IconButton
+//                 edge="start"
+//                 color="inherit"
+//                 onClick={handleClose}
+//                 aria-label="close"
+//               >
+//                 <CloseIcon />
+//               </IconButton>
+//             </div>
+//             {/* <div className="d-flex justify-content-between">
+//               <p className="mx-2">
+//                 <a href="">Share</a>
+//               </p>
+//               <p>
+//                 <a href="">Save</a>
+//               </p>
+//             </div> */}
+//           </div>
+//           <div className="container">
+//             <div className="col-md-8 m-auto">
+//               <ImageList
+//                 sx={{ width: "100%", height: "100%" }}
+//                 variant="masonry"
+//                 cols={3}
+//                 gap={8}
+//                 className={`${styles.imagesection}`}
+//               // rowHeight={121}
+//               >
+//                 {image.map((item: any) => (
+//                   <ImageListItem
+//                     key={item._id}
+//                     cols={2}
+//                     rows={2}
+//                   >
+//                     <img
+//                       {...srcset(APIURLS.baseUrl + item.imagePath, 121, 2, 2)}
+//                       alt="ddd"
+//                       loading="lazy"
+//                       onClick={handleClickImageOpen}
+//                     />
+//                   </ImageListItem>
+//                 ))}
+//               </ImageList>
+//             </div>
+//           </div>
+//         </Dialog>
+//       ) : null}
+
+//       {imageopen ? (
+//         <>
+//           <Drawer
+//             open={imageopen}
+//             anchor="bottom"
+//             // onClose={handlemodalImageClose}
+//             PaperProps={{ style: { width: '100%', height: '100%', backgroundColor: '#222' } }}
+//           >
+//             <div className="d-flex m-3 ">
+//               <IconButton
+//                 edge="start"
+//                 color="inherit"
+//                 onClick={handlemodalImageClose}
+//                 aria-label="close"
+//                 style={{ color: "white" }}
+//               >
+//                 <CloseIcon />
+//               </IconButton>
+//             </div>
+//             <PhotoCarousel data={listData} />
+//           </Drawer>
+//         </>
+//       ) : null}
+//       <CustomModal open={wishModal} onClose={handleCloseModal} title="Your Wishlist">
+//         <div className="p-3">
+//           {data.total > 0 ? <div className={`${styles.modal}`}>
+
+//             <div onClick={handleOpenModal} className={`${styles.flexBox}`}>
+//               <div className={`${styles.box}`}>
+//                 <AddIcon sx={{ fontSize: '50px', color: '#767676' }} />
+//               </div>
+//               <div className={`${styles.flexcontent}`}>
+//                 <h5>Create new wishlist</h5>
+//               </div>
+//             </div>
+//             <div className={`${styles.image}`}>
+//               {data.collectionData.map((items: any, index: number) => (
+//                 <div key={index} className={`${styles.imageContainer}`} onClick={handleWishList(items._id)}>
+//                   <div className={styles.flexImage}>
+//                     {items.data.img ?
+//                       <img className={`${styles.img}`} src={`${APIURLS.baseUrl}${items.data.img}`} width={64} height={64} alt={`Image ${index}`} />
+//                       :
+//                       <div className={`${styles.noImage}`}>
+//                         <HeartIcon width="44px"
+//                           height="44px"
+//                           color="transparent"
+//                           style={{
+//                             stroke: '#fff',
+//                             strokeWidth: 1,
+//                           }}
+//                         />
+//                       </div>
+//                     }
+//                     <div className={styles.flexContent}>
+//                       <h5>{items.data.collectionName}</h5>
+//                     </div>
+//                   </div>
+
+//                 </div>
+
+//               ))}
+//             </div>
+//           </div> : <div className={`${styles.modal}`}>
+//             <input placeholder="Collection Name" onChange={handleInputChange} />
+//             <p>Maximun 50 Characters</p>
+//             <button onClick={handleWishList()} className={`${styles.btn}`}>Create Collection</button>
+//           </div>}
+//         </div>
+//       </CustomModal>
+
+//       <CustomModal open={wishCollectionModal} onClose={handleCloseModalCollection} title="Your Wishlist" >
+//         <div className="p-3">
+//           <div className={`${styles.modal}`}>
+//             <input placeholder="Collection Name" onChange={handleInputChange} />
+//             <p>Maximun 50 Characters</p>
+//             <button onClick={handleWishList()} className={`${styles.btn}`}>Create Collection</button>
+//           </div>
+//         </div>
+//       </CustomModal>
+//       <CustomModal open={socialModalOpen} onClose={() => setSocialModalOpen(false)} title='Share this place'>
+//         <SocialModal image={galleryImage[0].img} name={listData.propertyName} />
+//       </CustomModal>
+
+//     </>
+//   );
+// }

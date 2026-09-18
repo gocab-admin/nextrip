@@ -1,0 +1,45 @@
+
+
+.color{
+  color:#34c6eb
+}
+
+.padding{
+  padding-top: 10px;
+}
+
+.pointer{
+  cursor: pointer;
+}
+.disabled {
+  pointer-events: none; /* Prevents click events */
+  opacity: 0.5; /* Makes the disabled option appear faded */
+}
+.time-picker::-webkit-scrollbar {
+  display: none;
+}
+
+.hour-picker-container {
+  font-size: 18px;
+  padding-bottom: 8px; 
+  display: flex;
+  column-gap: 6px;
+  align-items: center;
+  overflow-y: scroll;
+  .hour-picker-item {
+    border: 1px solid black;
+    padding: 5px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  .hour-picker-item.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  .hour-picker-item.selected {
+    background-color: #000;
+    color: #fff;
+  }
+
+}
+

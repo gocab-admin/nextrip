@@ -1,0 +1,18 @@
+.body {
+    padding: 0px 80px 50px;
+    .content {
+        .para{
+            text-align: justify;
+        }
+    }
+}
+@media screen and (max-width: '678px'){
+    .body{
+        padding: 0px 40px; 
+    }
+}
+@media screen and (max-width:'460px'){
+    .body{
+        padding: 0px 20px; 
+    }
+}

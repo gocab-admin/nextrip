@@ -1,0 +1,220 @@
+.host {
+    .hostdetails {
+        display: grid;
+        grid-template-columns: 30% 70%;
+        padding: 0px 40px;
+        margin-top: 50px;
+       
+        // .editImage {
+        //     position: relative;
+        //     margin-left: 60px;
+        //     .images {
+        //         width:215px;
+        //         height: 215px;
+        //         border-radius: 50%;
+        //         position: sticky;
+        //         top: 100px;
+        //         object-fit: cover;
+               
+        //     }
+        // }
+
+        .image_container{
+            position: sticky;
+            display: flex;
+            top:100px;
+            justify-content: center;
+            height: 40%;
+
+            .container {
+                position: relative;
+
+                .images {
+                    width:215px;
+                    height: 215px;
+                    border-radius: 50%;
+                }
+                .edit_label{
+                    display: grid;
+                    grid-template-columns: repeat(2,1fr);
+                    align-items: center;
+                    gap: 10px;
+                    cursor: pointer;
+                    border: 2px solid var(--btn-color); 
+                    width: 89px;
+                    position: absolute;
+                    left: 60px;
+                    right: 0;
+                    font-size: var(--homepage-header-size);
+                    font-weight: 600;
+                    bottom: 60px;
+                    padding: 8px;
+                    border-radius: 50px; /* Rounded-3xl in Tailwind CSS */
+                    display: flex;
+                    gap: 2;
+                    background-color: var(--btn-color);
+                    box-shadow: 0px 0px 5px rgba(170, 170, 170, 0.5); /* shadow-md in Tailwind CSS */
+                }
+                p{
+                    margin-bottom: 0;
+                }
+            }
+        }
+            .edit_page {
+                width: 100%;
+                h1 {
+                    color: var(--font-color-profile) !important;
+                    font-size: var( --h1-font-size) !important;
+                    font-family: var(--font-family-base) !important;
+                }
+                .edit_profile {
+                    display: grid;
+                    grid-template-columns: repeat(2,1fr);
+                    column-gap: 50px;
+                    p {
+                        font-size: var(--give-house-title);
+                        color: var(--text-color) !important;
+                    }
+                    // row-gap: 10px;
+
+                    .btn_border {
+                        border-bottom: 1px solid #DDDDDD !important;
+                        background: none;
+                        border: none;
+                        padding: 24px 8px;
+                    }
+
+                    .btn_border:hover {
+                        background-color: #f7f7f7;
+                        border-radius: 8px;
+                    }
+                }
+
+                .intro {
+
+                    .addintro {
+                        border: 1px dashed #b0b0b0;
+                        border-radius: 12px;
+                        padding: 24px 16px;
+                        margin: 32px 0 0;
+                        cursor: pointer;
+
+                        span {
+                            font-weight: 600;
+                            text-decoration: underline;
+                        }
+                    }
+                }
+
+                .sports {
+
+                    span {
+                        font-weight: 600;
+                        text-decoration: underline;
+                    }
+                }
+
+                .edit_footerbtn {
+                    position: sticky;
+                    bottom: 0;
+                    background: var(--btn-color);
+                    border-top: 1px solid #ebebeb;
+                    width: 100%;
+
+                    .done {
+                        padding: 12px 22px;
+                        background-color: var(--search-button-color);
+                        color: var(--btn-color);
+                        font-weight: 600;
+                        border: none;
+                        border-radius: 8px;
+                    }
+                }
+            }
+        }
+
+        h1 {
+            font-weight: 700;
+            color: var(--font-color-profile) !important;
+            font-size: var( --h1-font-size) !important;
+        }
+
+        h5 {
+            font-size: var(--host-index-title);
+            font-weight: 600;
+        }
+
+        .divider {
+            border-bottom: 1px solid #EBEBEB;
+            margin: 40px 0;
+        }
+
+        .border {
+            border: 1px solid #DDDDDD;
+            border-radius: 24px;
+            padding: 4px 20px;
+        }
+
+        a {
+            color: var(--text-color);
+            text-decoration: underline !important;
+            font-weight: 600;
+        }
+        .full_done {
+            position: sticky;
+            bottom: 0;
+            background: var(--btn-color);
+            border-top: 1px solid #ebebeb;
+    
+            .edit_footerbtn {
+                margin: 0 auto;
+            }
+            
+            .done {
+                padding: 12px 22px;
+                background-color: var(--search-button-color);
+                color: var(--btn-color);
+                font-weight: 600;
+                border: none;
+                border-radius: 8px;
+            }
+        }
+    
+    }
+
+   //responsive 
+
+
+@media screen and (max-width: 768px) {
+    .user{
+        .hostdetails {
+            grid-template-columns: 50% 50%;
+            .edit_page {
+                .edit_profile {
+                    grid-template-columns: repeat(1,1fr);
+                }
+            }
+        }
+    }
+    
+    
+}
+
+@media screen and (max-width: 500px) {
+    .user{
+        .hostdetails {
+            grid-template-columns: 100%;
+            gap: 50px;
+            .edit_page {
+                .edit_profile {
+                    grid-template-columns: repeat(1,1fr);
+                }
+            }
+        }
+    }
+}
+.edit_btn{
+    background-color: var(--search-button-color);
+    color: var(--btn-color);
+    font-weight: 600;
+}

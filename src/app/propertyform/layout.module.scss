@@ -1,0 +1,196 @@
+@import '@/app/variable.scss';;
+
+.host {
+    .navigation {
+        position: sticky;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 80px;
+        z-index: 9999;
+        background-color: var(--btn-color);
+
+        .header_nav {
+            // max-width: 1440px;
+            // margin: auto; 
+            padding: 15px 50px;
+
+            p {
+                font-size:var(--homepage-header-size);
+                font-weight: 600;
+                color: $font-color;
+            }
+
+            .btn_setup {
+                font-size: var(--msg-header-text);
+                padding: 7px 15px;
+                font-weight: 600;
+                background: var(--btn-color);
+                color:var(--text-color);
+                border-radius: 24px;
+                border: 1px solid #dddd;
+
+                .flexit {
+                    line-height: normal;
+                    font-size: var(--searchbox-header-size);
+                    color:var(--text-color);
+                }
+            }
+        }
+    }
+
+    .getstarbtn {
+        position: fixed;
+        background-color: var(--btn-color);
+        bottom: 0;
+        // border-top: 3px solid lightgray;
+        width: 100%;
+        // height: 80px;
+
+        .getstart {
+            background-color: #d70466;
+            padding: 15px 25px;
+            color: var(--btn-color);
+            font-weight: 600;
+            border: 1px solid #d70466;
+            border-radius: 5px;
+            position: fixed;
+            bottom: 10px;
+            margin-right: 20px;
+
+        }
+
+        span {
+            width: 100%;
+            padding: 3px 0;
+            background-color: #D8D8D8;
+
+            span {
+                background-color: var(--search-button-color) !important;
+            }
+        }
+
+        .barbtn {
+            // margin: 10px 0 0;
+             display: flex;
+             justify-content: space-between;
+             padding-left: 90px;
+             padding-right: 90px; 
+             padding-bottom: 10px;
+            .nextbtn {
+                // background-color: black;
+                cursor: pointer;
+                padding: 11px 25px;
+                // border: 1px solid black;
+                border-radius: 8px;
+                color: var(--btn-color);
+                font-weight: 600;
+            }
+
+            .nextdisable {
+                background-color: #dddddd;
+                padding: 11px 25px;
+                font-weight: 600;
+                color: var(--btn-color);
+                border: none;
+                border-radius: 8px;
+            }
+
+            .backbtn {
+                cursor: pointer;
+                padding: 11px 25px;
+                color: var(--text-color);
+                font-weight: 600;
+                text-decoration: underline;
+            }
+
+            .backbtn:hover {
+                background-color: #dddd;
+            }
+
+            span {
+                background-color: transparent;
+            }
+        }
+
+        @media screen and (max-width:767px) {
+            .barbtn{
+                display: flex;
+                justify-content: end;
+                padding-left: 10px;
+                padding-right: 10px; 
+                gap: 20px;
+            }
+        }
+
+    }
+
+    .getstarbtn2 {
+        position: fixed;
+        background-color: var(--btn-color);
+        bottom: 0;
+        border-top: 2px solid #dddd;
+        width: 100%;
+        padding: 7px 12px;
+
+        .getstart {
+            background-color: #d70466;
+            padding: 12px 32px;
+            color: var(--btn-color);
+            font-weight: 700;
+            border: 1px solid #d70466;
+            border-radius: 8px;
+
+        }
+    }
+
+    .savebtn {
+        // background-color: black;
+        padding: 11px 25px;
+        // border: 1px solid black;
+        border-radius: 8px;
+        color: var(--btn-color);
+        font-weight: 600;
+        background-image: var(--btn-gradient);
+    }
+
+    .barbtn {
+        // margin: 10px 0 0;
+
+        .nextbtn {
+            // background-color: black;
+            padding: 11px 25px;
+            // border: 1px solid black;
+            border-radius: 8px;
+            color: var(--btn-color);
+            font-weight: 600;
+            background-image: var(--btn-gradient);
+        }
+
+        .nextdisable {
+            background-color: #dddddd;
+            padding: 11px 25px;
+            font-weight: 600;
+            color: var(--btn-color);
+            border: none;
+            border-radius: 8px;
+        }
+
+        .backbtn {
+            padding: 11px 25px;
+            color: var(--text-color);
+            font-weight: 600;
+            text-decoration: underline;
+        }
+
+        .backbtn:hover {
+            background-color: #dddd;
+        }
+
+        span {
+            background-color: transparent;
+        }
+    }
+
+}

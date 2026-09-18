@@ -1,0 +1,98 @@
+.notification {
+    margin-bottom: 80px;
+    padding: 0 0 80px;
+
+    .tabpanel {
+        max-width: 1080px;
+
+        .divider {
+            border-bottom: 1px solid #EBEBEB;
+        }
+
+        .breadcrums {
+            margin: 40px 0;
+
+            h1 {
+                font-weight: 700;
+                color: var(--font-color-profile); 
+                font-size: var(--h1-font-size);
+            }
+        }
+
+        h5 {
+            margin: 32px 0 8px;
+            font-size: var(--host-index-title);
+            font-weight: 700;
+        }
+
+        .tab {
+            display: flex;
+            @media (min-width: 1000px) {
+            .tabwidth {
+                width: 66.66%;
+            }
+        }
+        // @media (min-width: 1000px) {
+                .tablist {
+                    border-bottom: 1px solid rgb(221, 221, 221);
+
+                    button {
+                        text-transform: capitalize;
+                        font-size: var(--msg-header-text);
+                        font-weight: 700;
+                        color: var(--trips-subtitle-color);
+                        font-family: '__Nunito_911ddf', '__Nunito_Fallback_911ddf';
+                    }
+
+                    >div>div>span {
+                        background-color:var(--search-button-color) !important;
+                    }
+                }
+            // }
+                .panels {
+                    padding: 0;
+
+                    .button {
+                        background-color: var(--text-color);
+                        color: var(--btn-color);
+                        border: none;
+                        border-radius: 8px;
+                        padding: 14px 24px;
+                    }
+
+                    a {
+                        text-decoration: underline !important;
+                        color: var(--text-color);
+                        padding: 10px 0 0;
+                        font-weight: 600;
+                    }
+
+                    p {
+                        color: var(--trips-subtitle-color);
+                        margin: 0;
+                    }
+                }
+            
+        }
+    }
+}
+
+//modal 
+
+.content {
+    h5 {
+        font-weight: bold;
+        margin-top: 40px;
+    }
+    p {
+        color: #838383;
+    }
+    .switch_content {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px;
+        p {
+            color: #929292;
+        }
+    }
+}

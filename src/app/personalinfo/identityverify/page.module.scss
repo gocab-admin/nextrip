@@ -1,0 +1,197 @@
+@import '../../variable.scss';
+
+
+.host {
+
+    .form {
+        @media (min-width: 1184px) {
+            .size {
+                width: 83.333333%;
+            }
+        }
+
+        a {
+            color: var(--text-color);
+        }
+
+        .formleft {
+            @media (min-width: 390px){
+                p{
+                    font-size: var(--homepage-footer-size);
+
+                }
+            }
+            p {
+                font-size: var(--msg-header-text);
+                color: var(--text-color);
+
+                span {
+                    font-weight: 700;
+                }
+
+                a {
+                    text-decoration: underline !important;
+                    font-weight: 600;
+                }
+
+            }
+        }
+
+        @media (min-width: 1000px) {
+            .accountset {
+                display: grid;
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+                gap: 1.25rem;
+                margin-bottom: 19rem;
+            }
+        }
+
+        @media (min-width:768px) and (max-width:1000px) {
+            .accountset {
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 1.25rem;
+            }
+        }
+
+        .boxes {
+            box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px !important;
+            border-radius: 15px;
+            padding: 15px;
+            margin: 10px 0;
+
+            svg {
+                margin-bottom: 20px;
+            }
+
+            p {
+                margin: 0;
+            }
+        }
+
+
+
+        .deletelink {
+            text-align: center;
+            margin: 30px 0 0;
+            padding: 10px 0 0;
+
+            .link {
+                text-decoration: underline !important;
+            }
+        }
+
+    }
+}
+
+.personal{
+
+    .editbtn {
+        align-self: flex-start;
+        border: transparent;
+        background-color: unset;
+        text-decoration: underline !important;
+        color: var(--text-color);
+        cursor: pointer;
+    }
+    .cancelbtn {
+        border: transparent;
+        background-color: unset;
+        text-decoration: underline !important;
+        color: var(--text-color);
+        display: block;
+        text-align: right;
+        cursor: pointer;
+    }
+
+    .savebtn {
+        background-color: var(--search-button-color);
+        font-weight: 600;
+        border-radius: 5px;
+        color: var(--btn-color);
+        border: unset;
+        padding: 10px;
+    }
+    h4,
+    .h4 {
+        font-size: var(--msg-header-text);
+        font-weight: 500;
+    }
+
+    input {
+        border: 1px solid lightgrey;
+        border-radius: 5px;
+        padding: 10px;
+        // width: 100%;
+        width: 250px
+    }
+    // input[type="file"] {
+    //     display: none; /* Hide the default file input */
+    //   }
+
+    // label {
+    //     border: 1px solid lightgrey;
+    //     border-radius: 5px;
+    //     padding: 10px;
+    //     // width: 100%;
+    //     width: 250px
+    // }
+ }
+
+//  @media (min-width: 768px){
+// .inputbox{
+//     display: flex !important;
+//     justify-content:space-between;
+// }
+// .input {
+//     border: 1px solid lightgrey;
+//     border-radius: 5px;
+//     padding: 10px;
+//     height: 52px;
+// } 
+// }
+
+// .inputBox {
+//     display: flex !important;
+//     // flex-direction: row;
+//   }
+  
+//   @media (min-width: 767px) and (max-width:2000px) {
+//     .inputBox {
+//       display: flex;
+//       flex-direction: column;
+//     }
+//   }
+@media only screen and (min-width: 768px) {
+  .fileChoose{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .personal{
+    width: 700px;
+  }
+}
+.calendarDiv{
+    top: 40%;
+    left: -70%;
+    z-index: 999;
+    background: var(--btn-color);
+    padding: 8px;
+    border-radius: 8px;
+    box-shadow: 5.4px 10.7px 10.7px rgba(0, 0, 0, .33);
+}
+.navText{
+    color: RGB(0, 0, 238);
+    cursor: pointer; 
+}
+.navText:hover {
+    text-decoration: underline;
+  }
+
+//   @media only screen and (max-width: 320px) {
+//     .navText{
+//         margin-left: 15px; 
+//     }
+// }

@@ -1,0 +1,270 @@
+.host {
+    .content {
+        display: grid;
+        grid-template-columns: 40% 60%;
+        max-width: 1440px !important;
+        margin-top: 30px;
+
+        .content_left {
+            padding: 20px;
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+            height: 500px;
+            position: sticky;
+            top: 130px;
+
+            .label_box {
+                max-height: 250px;
+
+                .label_left {
+                    background-color: white;
+                    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+                    border: 1px solid rgba(0, 0, 0, 0.04);
+                    border-radius: 24px;
+                    padding: 30px;
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    column-gap: 15px;
+                    align-items: center;
+                    max-width: 370px;
+                    margin-bottom: 30px;
+
+                    .label_contentleft {
+                        display: grid;
+                        gap: 15px;
+                        justify-content: center;
+                        align-items: center;
+
+                        h3 {
+                            font-weight: bold;
+                            margin-bottom: 0;
+                            font-size: var(--give-house-title);
+                        }
+
+                        .images {
+                            border-radius: 50%;
+                            object-fit: cover;
+                        }
+                    }
+
+                    .label_right {
+                        padding: 20px;
+
+                        p {
+                            display: grid;
+                            margin-bottom: 0;
+                        }
+                    }
+                }
+
+
+            }
+
+            .custom_box {
+                display: grid;
+                padding: 30px;
+                max-width: 370px;
+                max-height: 200px;
+                border: 2px solid #c4c4c4;
+                border-radius: 15px;
+
+                h4 {
+                    font-weight: bold;
+                }
+
+                .content {
+                    display: flex;
+                    gap: 15px;
+                    justify-content: flex-start;
+                }
+
+                // .verification {
+                //    margin-top: 30px;
+                //    p {
+                //     margin-top: 20px;
+                //    }
+                // }
+            }
+        }
+
+        .content_right {
+            padding: 20px;
+
+            h1 {
+                font-size: bold;
+            }
+
+            button {
+                border: 2px solid rgb(53, 53, 53);
+                border-radius: 5px;
+                padding: 5px;
+                background-color: white;
+                margin-top: 10px;
+            }
+
+            .data {
+                margin-top: 40px;
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 20px;
+
+                .usercontent {
+                    padding: 20px;
+                    border-bottom: 1px solid #c4c4c4;
+
+                    p {
+                        margin-bottom: 0;
+                    }
+                }
+
+                .container {
+                    display: grid;
+
+                    span {
+                        margin-left: 42px;
+                        font-size: var(--msg-header-text);
+                        display: flex;
+                        justify-content: flex-start;
+                        color: #444444;
+                        max-width: 400px;
+                    }
+
+                    p {
+                        font-size: var(--give-house-title);
+                        font-weight: bold;
+                    }
+                }
+            }
+
+            .container1 {
+                display: grid;
+                border: 1px dotted #444444;
+                padding: 20px;
+                border-radius: 10px;
+
+                span {
+
+                    font-size: var(--msg-header-text);
+                    display: flex;
+                    justify-content: flex-start;
+                    color: #444444;
+                    max-width: 400px;
+                }
+
+                p {
+                    font-size: var(--give-house-title);
+                    font-weight: bold;
+                }
+            }
+
+            .picture {
+                border-radius: 10px;
+                width: 250px;
+                height: 230px;
+            }
+
+            .buttn {
+                border: 1px solid var(--footer-text-color);
+                border-radius: 5px;
+                padding: 7px;
+                background-color: var(--footer-text-color);
+                margin-top: 10px;
+                color: white;
+                background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0));
+
+            }
+
+            .flex {
+                width: 100%;
+                height: 300px;
+                gap: 10px;
+                overflow-y: auto;
+                overflow-x: visible;
+            }
+
+            .flex::-webkit-scrollbar {
+                display: none;
+            }
+            .nocontent{
+                width: 50%;
+                border: 1px solid var(--trips-subtitle-color);
+                border-radius: 8px;
+                padding: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+
+    }
+
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+
+    .picture {
+        width: 100%;
+        height: 250px;
+        border-radius: 10px;
+        object-fit: cover;
+    }
+}
+
+.grid2 {
+    width: 100%;
+    height: 50%;
+
+    .picture {
+        border-radius: 10px;
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+    }
+}
+
+@media screen and (max-width:915px) {
+    .host {
+        .content {
+            display: block !important;
+
+            .content_left {
+                padding: 20px;
+                display: flex;
+                align-items: center;
+                position: static;
+                max-height: 250px;
+
+                .custom_box {
+                    visibility: hidden;
+                }
+            }
+
+            .content_right {
+                .data {
+                    display: grid;
+                    grid-template-columns: auto;
+                    gap: 20px;
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width:1024px) {
+    .host {
+        .content {
+            .content_right {
+                .data {
+                    display: grid;
+                    grid-template-columns: repeat(1, minmax(0, 1fr));
+                    gap: 20px;
+                }
+            }
+        }
+    }
+}

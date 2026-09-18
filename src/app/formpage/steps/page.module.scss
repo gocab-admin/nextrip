@@ -1,0 +1,258 @@
+@import '../../variable.scss';
+
+
+    .navigation {
+        position: sticky;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 80px;
+        z-index: 9999;
+        background-color: var(--btn-color);
+
+        .header_nav {
+            // max-width: 1440px;
+            // margin: auto; 
+            padding: 15px 50px;
+
+            p {
+                font-size:var(--homepage-header-size);
+                font-weight: 600;
+                color: $font-color;
+            }
+
+            .btn_setup {
+                font-size: var(--msg-header-text);
+                padding: 7px 15px;
+                font-weight: 600;
+                background: var(--btn-color);
+                color:var(--text-color);
+                border-radius: 24px;
+                border: 1px solid #dddd;
+
+                .flexit {
+                    line-height: normal;
+                    font-size: var(--searchbox-header-size);
+                    color:var(--text-color);
+                }
+            }
+        }
+    }
+
+    .form {
+        max-width: 1220px;
+        margin: auto;
+        padding: 0px 20px;
+        display: grid;
+        grid-template-columns: auto auto;
+        align-items: center;
+        gap: 10px;
+        // justify-content: space-between;
+        height: 80vh;
+
+        .formleft {
+            margin: 0 40px 0 0;
+
+            h1 {
+                font-size: var(--host-index-text);
+                font-weight: bold;
+                color:var(--text-color);
+                // margin: 0 100px 0 0;
+            }
+        }
+
+        .images {
+            width: 100px;
+            height: 100px;
+            margin-left: 40px;
+        }
+
+        .formright {
+            display: flex;
+            justify-content: space-between;
+            padding: 0 0 10px;
+            border-bottom: #e2e2e2 1px solid;
+            width: 100%;
+        }
+
+        .formrightcon {
+
+            h5 {
+                font-weight: 700;
+                font-size: var(--host-index-title);
+                color:var(--text-color);
+            }
+
+            p,
+            span {
+                color:var(--text-color);
+            }
+
+        }
+    }
+
+    .getstarbtn {
+        position: fixed;
+        background-color: var(--btn-color);
+        bottom: 0;
+        // border-top: 3px solid lightgray;
+        width: 100%;
+        // height: 80px;
+
+        .getstart {
+            background-color: #d70466;
+            padding: 15px 25px;
+            color: var(--btn-color);
+            font-weight: 600;
+            border: 1px solid #d70466;
+            border-radius: 5px;
+            position: fixed;
+            bottom: 10px;
+            margin-right: 20px;
+
+        }
+
+        span {
+            width: 100%;
+            padding: 3px 0;
+            background-color: #D8D8D8;
+
+            span {
+                background-color: var(--search-button-color) !important;
+            }
+        }
+
+        .barbtn {
+            // margin: 10px 0 0;
+
+            .nextbtn {
+                // background-color: black;
+                padding: 11px 25px;
+                // border: 1px solid black;
+                border-radius: 8px;
+                color: var(--btn-color);
+                font-weight: 600;
+            }
+
+            .nextdisable {
+                background-color: #dddddd;
+                padding: 11px 25px;
+                font-weight: 600;
+                color: var(--btn-color);
+                border: none;
+                border-radius: 8px;
+            }
+
+            .backbtn {
+                padding: 11px 25px;
+                color: var(--text-color);
+                font-weight: 600;
+                text-decoration: underline;
+            }
+
+            .backbtn:hover {
+                background-color: #dddd;
+            }
+
+            span {
+                background-color: transparent;
+            }
+        }
+
+    }
+
+    .barbtn {
+        // margin: 10px 0 0;
+
+        .nextbtn {
+            // background-color: black;
+            padding: 11px 25px;
+            // border: 1px solid black;
+            border-radius: 8px;
+            color: var(--btn-color);
+            font-weight: 600;
+        }
+
+        .nextdisable {
+            background-color: #dddddd;
+            padding: 11px 25px;
+            font-weight: 600;
+            color: var(--btn-color);
+            border: none;
+            border-radius: 8px;
+        }
+
+        .backbtn {
+            padding: 11px 25px;
+            color: var(--text-color);
+            font-weight: 600;
+            text-decoration: underline;
+        }
+
+        .backbtn:hover {
+            background-color: #dddd;
+        }
+
+        span {
+            background-color: transparent;
+        }
+    }
+
+//responsive
+
+@media screen and (max-width: 768px) {
+        .form {
+            display: grid;
+            grid-template-columns: auto;
+            gap: 40px;
+            // flex-wrap: wrap;
+            // flex-direction: column;
+
+            .formleft {
+                margin: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-top: 20px;
+                h1 {
+                    font-size: 30px;
+                }
+            }
+
+            .images {
+                width: 70px;
+                height: 70px;
+                margin-left: 40px;
+            }
+
+            .formrightcon {
+
+                p,
+                span,
+                h5 {
+                    color:var(--text-color);
+                }
+
+            }
+        }
+}
+
+
+@media screen and (max-width: 480px) {
+        .form {
+            display: grid;
+            grid-template-columns: auto;
+
+            .formleft {
+                margin: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-top: 20px;
+                h1 {
+                    font-size: 30px;
+                }
+            }
+        }
+}

@@ -1,0 +1,23 @@
+.slick4{
+  @media screen and (min-width: 480px) {
+    .slick-slider {
+        margin-inline: -30px; //  space between slides * (-1)
+      }
+    
+      .slick-slide {
+        >div { // automatically generated 'div' by 'react-slick'
+          margin-inline: 15px; //  space between slides / 2
+        }
+      }
+    }
+
+    @media screen and (max-width: 680px) {
+      .slick-next {
+        right: 25px !important;
+      }
+
+      .slick-prev {
+        left: 25px !important;
+      }
+    }
+}

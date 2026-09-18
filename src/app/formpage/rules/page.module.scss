@@ -1,0 +1,21 @@
+.modal {
+    display:flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 140px);
+
+    input{
+        width: 100%;
+        border: 1px solid #000;
+        border-radius: 5px;
+        outline: none;
+    }
+    textarea{
+        width: 100%;
+        border: 1px solid #000;
+        border-radius: 5px;
+        outline: none;
+    }
+}

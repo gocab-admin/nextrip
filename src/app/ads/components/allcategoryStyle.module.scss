@@ -1,0 +1,105 @@
+.container {
+    background-color: #fff;
+
+    // border-radius: 8px;
+
+    // box-shadow:0 1.5px 4px rgba(0,0,0,.24),0 1.5px 6px rgba(0,0,0,.12);
+    z-index: 9999;
+
+    .ulContainer {
+        padding: 0;
+        margin: 0;
+        flex-direction: column;
+        overflow: hidden;
+        display: flex;
+
+        .linkBottomPadding {
+            padding-bottom: 10px;
+        }
+
+        .listcontent {
+            width: max(25%, 200px);
+            display: flex;
+
+            &.selected {
+                .link {
+                    background-color: #fff;
+                    border-color: #eaeaea;
+                }
+
+                .expandsub {
+                    visibility: visible !important;
+                }
+
+                .linkContainer {
+                    color: #333;
+                }
+            }
+
+            .linkContainer {
+                padding-top: 10px;
+                padding-left: 10px;
+                display: inline-flex;
+                width: 100%;
+                background-color: #f4f4f4;
+                color: var(--btn-text-color);
+
+                .link {
+                    font-weight: 700;
+                    font-size: 14px;
+                    padding: .5rem 0 .5rem .5rem;
+                    border-radius: .5rem 0 0 .5rem;
+                    width: 100%;
+                    // border: 1px solid var(--btn-bg-color);
+                    border-right: none;
+                    display: flex;
+                    color: #000;
+                    align-items: center;
+                }
+            }
+
+            .expandsub {
+                position: absolute;
+                visibility: hidden;
+                left: calc(max(25%, 200px) + 2rem);
+                top: 0;
+                background: transparent;
+                padding: 1.25rem 0;
+                width: calc(100% - max(25%, 200px) - 4rem);
+
+                .categoryTitle {
+                    font-weight: 600;
+                    margin-bottom: 6px;
+                    font-size: 13px;
+                    color: #ff3f55;
+                }
+
+                .categoryColumns {
+                    column-count: 3;
+                    padding: 0;
+
+                    .subcategoryList {
+                        display: inline-block;
+                        margin: 0;
+                        padding: 0;
+                    }
+
+                    .categoryList {
+                        margin: 0 0 .5rem;
+                        page-break-inside: avoid;
+                        break-inside: avoid;
+                        font-size: 13px;
+                    }
+                }
+            }
+        }
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    // .mainCategoryList {
+    //     font-size: 14px;
+    // }
+}

@@ -1,0 +1,104 @@
+@import '@/app/variable.scss';;
+
+.host {
+    @media (min-width: 1184px) {
+        .size {
+            width: 83.333333%;
+        }
+    }
+    
+    .personal {
+        display: grid;
+        grid-template-columns: 60% 40%;
+        gap: 20px   ;
+        @media (min-width: 640px) {
+            .info {
+                padding-inline-end: 3rem;
+            }
+        }
+        @media (min-width: 1000px) {
+            .info {
+                width: 66.66666667%;
+            }
+        }
+        .editbtn {
+            border: transparent;
+            background-color: unset;
+            text-decoration: underline !important;
+            color: var(--text-color);
+            cursor: pointer;
+        }
+
+        .cancelbtn {
+            border: transparent;
+            background-color: unset;
+            text-decoration: underline !important;
+            color: var(--text-color);
+            display: block;
+            text-align: right;
+            cursor: pointer;
+        }
+
+        .savebtn {
+            background-color: var(--search-button-color);
+            font-weight: 600;
+            border-radius: 5px;
+            color: var(--btn-color);
+            border: unset;
+            padding: 10px;
+        }
+
+        input {
+            border: 1px solid lightgrey;
+            border-radius: 5px;
+            padding: 10px;
+            width: 100%;
+        }
+        @media (min-width: 1000px) {
+            .rightbox {
+                width: 33.33333333%;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .rightcon {
+                border: 1px solid #dedede;
+                border-radius: 13px;
+
+                svg {
+                    color: var(--search-button-color);
+                    font-size: 30px;
+                }
+            }
+        }
+
+        h4,
+        .h4 {
+            font-size: var(--msg-header-text);
+            font-weight: 500;
+        }
+        .info{
+            width: 100%;
+        }
+        .rightbox{
+            width: 100%;
+        }
+    }
+
+    @media (max-width: 1000px) {
+        .personal {
+            display: grid;
+            grid-template-columns: 100%;
+        }
+    }
+
+        .personal {
+            h3 {
+                font-size: 21px;
+                font-weight: medium;
+                color: var(--text-color);
+                margin-top: 20px;
+            }
+
+        }
+    }

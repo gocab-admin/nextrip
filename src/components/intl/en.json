@@ -1,0 +1,55 @@
+{
+    "header": {
+      "where": "Where",
+      "stays": "Stays",
+      "checkin": "Check In",
+      "checkout": "Check Out",
+      "who": "Who",
+      "search": "Search",
+      "searchdestinations": "Search Destination",
+      "anydates": "any Dates",
+      "anywhere": "any Where",
+      "anyguests": "any Guests",
+      "adddates": "add Dates",
+      "addguests": "add Guests",
+      "becomeahost":"Become a Host",
+      "login":"logIn",
+      "signup":"signUp",
+      "night":"Night"
+    },
+    "filter": {
+      "typeofplace": "Type Of Place",
+      "searchrooms":"Search rooms",
+      "entirehomes":"Entire homes",
+      "or": "or",
+      "anytypeofplace":"Any type of place",
+      "nightlypricesbeforefeesandtaxes":"Nightly prices before fees and taxes",
+      "showmore":"Show More",
+      "showless":"Show Less",
+      "instantbooking":"Instant Booking",
+      "clearall":"Clear All",
+      "pricerange":"Price Range",
+      "rooms": "Rooms",
+      "bedrooms": "Bed Rooms",
+      "bathrooms": "Bath Rooms",
+      "amenities": "Amenities",
+      "bookingoptions":"Booking Options",
+      "show": "Show",
+      "places": "Places"
+    },
+    "product":{
+      "night":"Night"
+    },
+    "homepage":{
+      "showmap":"Show Map",
+      "showlist":"Show List"
+    },
+    "roompage":{
+      "share":"Share",
+      "save":"Save",
+      "showallphotos":"Show all photos",
+      "guests":"Guests",
+      "beds":"Beds",
+      "reviews":"Reviews"
+    }
+  }

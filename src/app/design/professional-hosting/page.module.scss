@@ -1,0 +1,96 @@
+.professional {
+    margin-bottom: 80px;
+    padding: 0 0 80px;
+
+    .tabpanel {
+        max-width: 1080px;
+
+        .divider {
+            border-bottom: 1px solid #EBEBEB;
+        }
+
+        .breadcrums {
+            margin: 40px 0;
+
+            h1 {
+                color: var(--font-color-profile); 
+                font-size: var(--h1-font-size);
+            }
+        }
+
+        h5 {
+            margin: 32px 0 8px;
+            color: #484848;
+            font-size: var(--host-index-title);
+            font-weight: 700;
+        }
+
+        @media (min-width: 1000px) {
+            .tab {
+                display: flex;
+
+                .tabwidth {
+                    width: 54%;
+                }
+            }
+        }
+
+        .button {
+            color: var(--text-color);
+            background: none;
+            border: none;
+            font-weight: 800;
+            text-decoration: underline !important;
+        }
+
+        .save {
+            background-color: var(--footer-text-color);
+            border: transparent;
+            border-radius: 8px;
+            color: var(--btn-color);
+            font-weight: 800;
+            padding: 10px 22px;
+        }
+
+        .copy {
+            background-color: var(--btn-color);
+            border-radius: 8px;
+            color: var(--text-color);
+            font-weight: 600;
+            padding: 10px 22px;
+        }
+
+        p {
+            color:var(--font-color-profile);
+
+            span {
+                font-weight: 600;
+            }
+
+            a {
+                color: var(--text-color);
+                font-weight: 600;
+                text-decoration: underline !important;
+            }
+        }
+
+        .textborder {
+            border: 1px solid #EBEBEB;
+            border-radius: 4px;
+            color:var(--font-color-profile);
+
+            .url {
+                font-weight: 600;
+            }
+
+            input {
+                padding: 11px !important;
+            }
+        }
+
+        h6 {
+            font-weight: 600;
+            color:var(--font-color-profile);
+        }
+    }
+}

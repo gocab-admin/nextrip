@@ -1,0 +1,186 @@
+@import '@/app/variable.scss';
+
+.opportunity_hub {
+    margin-top: 32px !important;
+
+    .container {
+        padding: 0px 80px;
+        max-width: 1440px !important;
+        margin: auto;
+
+        .main_content {
+            margin: 80px 0px;
+
+            h1 {
+                font-size: var(--host-index-title);
+                font-weight: 700;
+                margin-bottom: 24px;
+            }
+
+          .content_box {
+                 width: 60%;
+
+                h3 {
+                    font-size: var(--msg-header-text);
+                    font-family: sans-serif;
+                    font-weight: 600;
+                    margin-top: 10px;
+                    margin-bottom: 0;
+                 }
+                 select  {
+                    width: 100%;
+                    height: 50px;
+                    border: 1px solid #c4c4c4 ;
+                    border-radius: 5px;
+                    padding: 5px; 
+                    margin-top: 15px;
+                  }
+                 .earnings {
+                    margin-top: 60px;
+                   
+                    h1 {
+                        font-size: var(--host-step-title);
+                        font-weight: bold;
+                        margin-bottom: 0;
+                        font-family: sans-serif;
+                    }
+                    p   {
+                        font-family: sans-serif;
+                        font-weight: 500;
+                        color:  #6b6b6b;;
+                    }
+                    .graph_data {
+                        display: flex;
+                        gap: 40px;
+                        h4 {
+                            margin-top: 40px;
+                            font-size: 30px;
+                            font-weight: bold;
+                            margin-bottom: 0;
+                            font-family: sans-serif; 
+                        }
+                        .grid{
+                            display: grid;
+                            .flex {
+                                display: flex;
+                                gap : 10px;
+                                margin-top: 10px;
+                                align-items: center;
+                                .box{
+                                    width: 15px;
+                                    height: 15px;
+                                    background-color: var(--text-color);
+                                    border: 2px solid var(--text-color);
+                                }
+                                .box2{
+                                    width: 15px;
+                                    height: 15px;
+                                    background-color: rgb(136, 136, 136);
+                                    border: 2px solid rgb(136, 136, 136);
+                                }
+                                p{
+                                    font-size:var(--homepage-footer-size);
+                                    font-family: sans-serif;
+                                    color:#6b6b6b;
+                                    margin-bottom: 0;   
+                                }
+                            }
+                            
+                        }
+                    }
+                    .graph {
+                        width: 100%;
+                        height: 250px;
+                        background-color: #c4c4c4;
+                        margin-top: 30px;
+                    }
+                    .details {
+                        h5 {
+                            font-size: var(--filter-btn-text);
+                            font-family: sans-serif;
+                            font-weight: bold;
+                            text-decoration: underline;
+                            color: var(--text-color);
+                            padding-top: 30px;
+                        }
+                        .box1 {
+                            width: 100%;
+                            border-bottom:1px solid #d8d8d8;
+                            padding-top: 30px;
+                            padding-bottom: 30px;
+                            h1 {
+                                font-size: 25px;
+                                font-family: sans-serif;
+                                font-weight: 900;
+                            }
+                        }
+                        
+                        .box2 {
+                            width: 100%;
+                            border-bottom:1px solid #d8d8d8;
+                            padding-top: 30px;
+                            padding-bottom: 30px;
+                            p {
+                                font-size: var(--homepage-header-size);
+                                font-family: sans-serif;
+                                font-weight: 300;
+                                color: #3d3d3d;
+                                margin-bottom: 0;
+                            }
+                            h6 {
+                                font-size: var(--homepage-header-size);
+                                font-family: sans-serif;
+                                font-weight: 300;
+                                text-decoration: underline;
+                                color: #008489;
+                                margin-bottom: 0;
+                            }
+                        }
+                        .box3 {
+                            display: flex;
+                            justify-content: space-between;
+                            width: 100%;
+                            border-bottom:1px solid #d8d8d8;
+                            padding-top: 30px;
+                            padding-bottom: 30px;
+                            p {
+                                font-size:var(--homepage-header-size);
+                                font-family: sans-serif;
+                                font-weight: 300;
+                                color: #3d3d3d;
+                                margin-bottom: 0;
+                            }
+                        }
+
+                    }
+                 } 
+          }
+        }
+    }
+}
+
+//responsive
+
+@media screen and (max-width: 768px) {
+    .opportunity_hub {
+        .container {
+            .main_content {
+                .content_box {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .opportunity_hub {
+        .container {
+            .main_content {
+                .content_box {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

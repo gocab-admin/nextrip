@@ -1,0 +1,39 @@
+.success {
+    .content {
+        display: grid;
+        justify-content: center;
+        padding: 30px;
+        gap: 20px;
+        margin-bottom: 130px;
+        .Image_container {
+            display: flex;
+            justify-content: center;
+            .Image {
+                width: 260px;
+                height: 260px;
+            }
+            .Image2 {
+                width: 200px;
+                height: 200px;
+            }
+        }
+        h4 {
+            font-weight: bold;
+            margin: 0;
+        }
+        .content1{
+            display: flex;
+            justify-content: center;
+            max-width: 870px;
+
+            button {
+                padding: 10px;
+                border: 1px solid var(--btn-bg-color);
+                border-radius: 5px;
+                background-color: var(--btn-bg-color);
+                color: var(--btn-color); 
+            }
+        }
+    }
+
+}

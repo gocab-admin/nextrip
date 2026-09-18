@@ -1,0 +1,56 @@
+{
+    "header": {
+      "where": "Waar",
+      "stays": "Blijft",
+      "checkin": "Inchecken",
+      "checkout": "Kassa",
+      "who": "Wie",
+      "search": "Zoeken",
+      "searchdestinations": "Zoekbestemmingen",
+      "anydates": "Anydates",
+      "anywhere": "Overal",
+      "adddates":"Datums toevoegen",
+      "addguests":"Gasten toevoegen",
+      "anyguests": "Eventuele gasten",
+      "becomeahost":"Gastheer worden",
+      "login":"LogIn",
+      "signup":"Aanmelden",
+      "night":"nacht"
+    },
+    "filter": {
+      "typeofplace": "Soort plaats",
+      "searchrooms":"Zoek kamers",
+      "entirehomes":"Hele huizen",
+      "or": "Of",
+      "anytypeofplace":"Elk type plaats",
+      "nightlypricesbeforefeesandtaxes":"Nachtprijzen exclusief toeslagen en belastingen",
+      "showmore":"Laat meer zien",
+      "showless":"Laat minder zien",
+      "instantbooking":"Direct boeken",
+      "clearall":"Wis alles",
+      "pricerange":"Prijsbereik",
+      "rooms":"Kamers",
+      "bedrooms": "Slaapkamers",
+      "bathrooms": "Badkamers",
+      "amenities":"Voorzieningen",
+      "bookingoptions":"Boekingsmogelijkheden",
+      "show": "Show",
+      "places":"Plaatsen"
+    },
+    "product":{
+      "night":"nacht"
+    },
+    "homepage":{
+      "showmap":"Kaart weergeven",
+      "showlist":"Lijst tonen"
+    },
+    "roompage":{
+      "share":"Deel",
+      "save":"Redden",
+      "showallphotos":"Laat alle foto's zien",
+      "guests":"gasten",
+      "beds":"bedden",
+      "noreviewsyet":"Nog geen beoordelingen",
+      "reviews":"Recensies"
+    }
+  }

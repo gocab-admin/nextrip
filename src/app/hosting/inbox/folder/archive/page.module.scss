@@ -1,0 +1,23 @@
+// @import '@/app/variable.scss';;
+
+.all_archive {
+
+    .slidemain {
+        .slidebackground {
+            background-color: #f7f7f7;
+        }
+    }
+
+    .archive_input {
+        
+        .archive_absolute {
+            top: 10px;
+            left: 60px;
+        }
+
+        .archive_relative_input {
+            background-color: #f7f7f7;
+            border: 1px solid #cccbcb;
+        }
+    }
+}

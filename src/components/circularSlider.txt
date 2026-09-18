@@ -1,0 +1,102 @@
+import React, { useRef, useState } from 'react'
+import {
+	CircularInput,
+	useCircularInputContext,
+	useCircularDrag,
+	CircularTrack,
+	CircularProgress,
+	CircularThumb,
+} from 'react-circular-input'
+
+
+const CircularSlider = () => {
+	const min = 0.0;
+	const max = 0.95
+	
+	const [value, setValue] = useState(0.01)
+	const range = [1, 12]
+	const rangeValue = value * (range[1] - range[0]) + range[0]
+	const valueWithinLimits: any = (v: any) => {
+		console.log('va', Math.min(Math.max(v, min), max));
+		return Math.min(Math.max(v, min), max)
+	}
+	console.log('rangeValue',rangeValue)
+	let oldvalue = useRef(0);
+	return (
+		<CircularInput 
+		value={value}
+			onChange={(value)=>{
+				if(oldvalue.current>0.90 && value<0.5)
+				return;
+				if(oldvalue.current<0.5 && value>0.80)
+				return;
+			console.log(oldvalue.current,'...', value)
+				oldvalue.current = value;
+				setValue(value)
+			}} radius={125}>
+			<defs>
+				<filter id="inset-shadow">
+					<feOffset dx="0" dy="10" />
+					<feGaussianBlur stdDeviation="3" result="offset-blur" />
+					<feComposite
+						operator="out"
+						in="SourceGraphic"
+						in2="offset-blur"
+						result="inverse"
+					/>
+					<feFlood
+						floodColor="black"
+						floodOpacity="0.1"
+						result="color"
+					/>
+					<feComposite
+						operator="in"
+						in="color"
+						in2="inverse"
+						result="shadow"
+					/>
+					<feComposite
+						operator="over"
+						in="shadow"
+						in2="SourceGraphic"
+					/>
+				</filter>
+			</defs>
+
+			<CircularTrack
+				stroke="#ebebeb"
+				strokeWidth={50}
+			/>
+
+			<text
+				x="50%"
+				y="50%"
+				textAnchor="middle"
+				alignmentBaseline="middle"
+				style={{
+					fill: 'rgb(61, 61, 61)',
+					fontWeight: 'bold',
+					fontSize: '2rem',
+					letterSpacing: '-0.0666em',
+				}}
+			>
+				{Math.round(rangeValue)} &nbsp;
+				{
+					Math.round(rangeValue) === 1 ? 'Month' : 'Months'
+				}
+				
+			
+			</text>
+            
+			<CircularProgress
+				fill="none"
+				stroke="#ff385c"
+				strokeWidth={50}
+			/>
+
+			<CircularThumb r={20} stroke="#fff" fill="#fff" />
+		</CircularInput>
+	)
+}
+
+export default CircularSlider

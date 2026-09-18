@@ -1,0 +1,116 @@
+.notify {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--btn-color);
+    // border: 1px solid #d4d2d2;
+    cursor: pointer; 
+   
+}
+.Menuitem{
+    margin-bottom: 130px;
+    .Header{
+        padding: 15px;
+        position: sticky;
+        top: 0;
+        background-color: var(--btn-color);
+        z-index: 9999;
+    }
+    .clear{
+        display: flex;
+        justify-content: flex-end;
+        padding: 10px;
+        button{
+            background-color: transparent;
+            border: 1px solid transparent;
+            text-decoration: underline;
+            font-size: 15px;
+        }
+    }
+    .notificationBody{
+        padding: 5px;
+       display: flex;
+        transition: border-bottom 0.3s ease ; 
+        p{
+            margin-bottom: 0;
+        }
+        
+    }
+      .closeIconContainer {
+        opacity: 0;
+        transition: opacity 0.3s ease; 
+      }
+      
+      .notificationBody:hover .closeIconContainer {
+        opacity: 1;
+      }
+      .noContent{
+        display: grid;
+        align-items: center;
+        gap: 10px;
+        padding: 15px;
+        margin: auto;
+        p{
+            display: flex;
+            justify-content: center;
+            margin-bottom: 0;
+            font-weight: bold;
+            color: var(--trips-subtitle-color);
+        }
+      }
+}
+.stickyFooter{
+    padding: 10px;
+    background-color: var(--btn-color);
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    background-color: var(--btn-color);
+    z-index: 9999;
+    .pagination{
+        padding: 0;
+        margin: 0;
+        p{
+            margin-bottom: 0;
+        }
+    }
+   
+}
+//drawer
+
+.close {
+    border: 1px solid var(--text-color);
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    top: 20px;
+  }
+  .notifyIcon{
+    .icon{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: var(--trips-subtitle-color);
+    }
+      .p{
+        font-size: var(--notification-size);
+        margin-bottom: 0;
+        color: var(--trips-subtitle-color);
+      }
+  }
+
+.header{
+    position: sticky;
+    top: 0;
+    padding: 20px;
+    background-color: var(--btn-color);
+    z-index: 999;
+}
+.body{
+    margin: auto;
+}

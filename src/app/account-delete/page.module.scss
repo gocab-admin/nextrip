@@ -1,0 +1,88 @@
+.accountdelete {
+    width: 50%;
+    margin: 30px auto;
+
+    .deactivate {
+        // margin: 0 100px;
+        padding: 0 40px;
+        width: 65%;
+
+        .fieldset {
+            .radio {
+                accent-color: rgb(0, 132, 137);
+                height: 20px;
+                width: 20px;
+            }
+
+            .label {
+                border-bottom: 1px solid #EBEBEB;
+                margin: 12px 0;
+
+                label {
+                    color: var(--trips-subtitle-color);
+
+                    .link {
+                        color: #008489;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+
+        .back {
+            color: rgb(0, 132, 137);
+            background: transparent;
+            border: none;
+
+        }
+
+        .continue {
+            background-color: rgb(0, 132, 137);
+            padding: 10px 22px;
+            border: none;
+            border-radius: 4px;
+            font-weight: 800;
+            color: white;
+        }
+
+        .disable {
+            background-color: rgba(0, 132, 137, 0.3);
+            padding: 10px 22px;
+            font-weight: 800;
+            color: white;
+            border: none;
+            border-radius: 4px;
+        }
+    }
+}
+
+.bar {
+    padding: 0 15px;
+
+    span {
+        width: 100%;
+        padding: 4px 0;
+        background-color: #D8D8D8;
+
+        span {
+            background-color: #008489;
+        }
+    }
+}
+
+.stepper {
+    span {
+        font-size: var(--homepage-header-size);
+        svg {
+            padding: 0;
+            circle {
+                display: none;
+            }
+
+            text {
+                fill: var(--text-color);
+                font-size: var(--homepage-header-size);
+            }
+        }
+    }
+}

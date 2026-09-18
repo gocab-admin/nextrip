@@ -1,0 +1,91 @@
+.reportReason {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 30px;
+    margin-top: 5px;
+}
+
+.reportHostRadioReasons {
+    padding: 8px 4px;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+    border-bottom: 1px solid #efefef;
+}
+
+.reportHostRadioReasons input {
+    cursor: pointer;
+}
+
+.reportHostRadioBtn {
+    width: 20px;
+    height: 20px;
+    outline: none;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    border-radius: 50%;
+    margin: 0 1px;
+    vertical-align: middle;
+    background: #fff;
+    box-shadow: 0 0 0 2px #e0e0e0;
+    position: relative;
+}
+
+.reportHostRadioBtn:checked {
+    background: #ff3f55;
+    box-shadow:  0 0 0 2px #ff3f55;
+}
+
+.reportHostRadioBtn:checked:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #fff;
+}
+
+.reportReasonTextarea {
+    padding: 0px 30px 30px 30px;
+}
+
+.reportHostTextareaLabel {
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.reportHostTextarea {
+    width: 100%;
+    resize: none;
+    height: 78px !important;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: none;
+    border: 424242 solid;
+    border-radius: 8px;
+    color: #2c2c2c;
+    display: block;
+    font-size: 16px;
+    height: 48px;
+    box-sizing: border-box;
+    outline: none;
+    padding: 12px;
+}
+
+.reportHostSubmitBtn {
+    padding: 0px 30px 30px 30px;
+    text-align: end;
+}
+
+.errorText {
+    color: red;
+    font-size: 0.875rem;
+    margin-bottom: 0px;
+}

@@ -1,0 +1,97 @@
+.dateOptions {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.dateRadioOption {
+    font-size: 14px;
+    cursor: pointer;
+    min-height: 24px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.dateRadioBtn {
+    width: 20px;
+    height: 20px;
+    outline: none;
+    cursor: pointer;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    border-radius: 50%;
+    margin: 0 1px;
+    vertical-align: middle;
+    background: #fff;
+    box-shadow: 0 0 0 2px #e0e0e0;
+    position: relative;
+}
+
+.dateRadioBtn:checked {
+    background: #ff3f55;
+    box-shadow: 0 0 0 2px #ff3f55;
+}
+
+.dateRadioBtn:checked:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #fff;
+}
+
+.stickyContainer {
+    position: sticky;
+    overflow-y: auto;
+    scrollbar-width: none; // Hide scrollbar for Firefox
+    -ms-overflow-style: none; // Hide scrollbar for IE & Edge
+
+    &::-webkit-scrollbar {
+        display: none; // Hide scrollbar for Chrome, Safari, and Opera
+    }
+
+    &.withAllCategories {
+        top: 173px;
+    }
+
+    &.withoutAllCategories {
+        top: 123px;
+    }
+
+    // Responsive adjustments
+    @media (max-width: 1199px) {
+        padding: 0px 20px 20px 20px;
+        height: auto; // Reduced height for better UI on smaller screens
+    }
+
+    // Remove padding and adjust height for xl and xxl screens
+    @media (min-width: 1200px) {
+        padding: 0;
+        height: calc(100vh - 200px); // Original height for larger screens
+    }
+}
+
+.clearAllFilter {
+    display: flex;
+    justify-content: center;
+}
+
+.clearAllBtn {
+    background-color: #fff;
+    color: #ff3f55;
+    border: 0.125rem solid #ff3f55;
+    border-radius: 40px;
+    padding: 3px 15px;
+}
+
+.clearAllBtn:hover {
+    background-color: #ff3f55;
+    border: 0.125rem solid #ff3f55;
+    color: #fff;
+}

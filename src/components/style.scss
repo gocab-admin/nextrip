@@ -1,0 +1,9 @@
+@mixin font-style($fs, $clo...) {
+    font-size: $fs;
+    color: nth($clo, 1) !important;
+    font-family: nth($clo,2)
+  }
+
+  .cursor-pointer {
+    cursor: pointer;
+  }

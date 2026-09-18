@@ -1,0 +1,80 @@
+/* UserEditModeItem Container */
+.useredit_mode {
+  overflow: auto;
+  padding: 12px 24px;
+
+  h3 {
+    font-weight: bold;
+    line-height: 36px;
+    margin: 0;
+    font-family: var(--font-family-base);
+    font-size: var(--font-size-roomspage-header);
+    color: var(--text-color) !important;
+  }
+  p{
+    font-family:  var(--font-family-base);
+    color: var(--font-color-adddates) !important;
+  }
+
+  .item_description {
+    font-size: 1rem;
+    font-weight: 300;
+    margin-top: 7px;
+  }
+
+  .input_container {
+    Textarea {
+      width: 100%;
+      padding: 10px;
+      border: 2px solid #dddddd;
+      border-radius: 8px;
+
+    }
+
+    p {
+      margin: 0;
+      font-size: 1rem;
+      font-weight: 300;
+      font-family:  var(--font-family-base);
+    }
+
+    .input_field {
+      resize: none;
+      height: 48px;
+      margin-top: 2px;
+      width: 100%;
+      outline: none;
+    }
+  }
+
+  .character_count {
+    display: flex;
+    margin-bottom: 3px;
+    justify-content: flex-end;
+
+    p {
+      font-size: var(--msg-header-text);
+      font-weight: 300;
+    }
+  }
+}
+
+.disabledButton {
+  background-color: #dddddd !important;
+  color: hsl(0, 0%, 100%) !important;
+}
+
+.button_container {
+  position: sticky;
+  bottom: 0;
+  background-color: white;
+  padding: 10px;
+  display: flex;
+  justify-content: flex-end;
+
+  .pagination {
+    p {
+      margin: 0;
+    }
+  }
+}

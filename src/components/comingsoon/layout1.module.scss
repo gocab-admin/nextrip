@@ -1,0 +1,121 @@
+.bgimage {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #000000 0%, #c89116 100%);
+}
+.container {
+    padding: 75px 100px;
+    position: relative;
+}
+
+.subcontainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    width: 100%;
+    height: 100%;
+}
+
+.logo {
+    width: 100%;
+    height: auto;
+    max-width: 770px;
+    min-width: 192px;
+    margin-bottom: 25px;
+}
+
+.leftcont {
+    align-self: center;
+    width: 100%;
+    // overflow: hidden;
+}
+
+.rocket {
+    width: 108.465px;
+    height: 125.212px;
+    margin-left: 50px;
+    margin-top: 50px;
+}
+
+.flex {
+    display: flex;
+}
+
+.loader_comingsoon {
+    width: auto;
+    height: 180.274px;
+    transform: translateX(-25%);
+    animation: slideIn 1s ease forwards;
+}
+
+.text {
+    font-weight: 500; 
+    font-style: normal; 
+    color: rgb(237, 28, 36); 
+    font-kerning: none; 
+    text-decoration: none;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    transform: translateX(-100%);
+    animation: slideIn 1s ease forwards;
+}
+
+@keyframes slideIn {
+    to {
+        transform: translateX(0);
+    }
+  }
+
+.title {
+    font-size: 86.667px;
+    line-height: 72px;
+    margin-bottom: 17px;
+}
+
+.subtitle {
+    font-size: 40px;
+    line-height: 34px;
+}
+
+@media only screen and (max-width: 1000px) {
+    .subcontainer {
+        flex-direction:column;
+    }
+    .loader_comingsoon {
+        height: 150px;
+        margin: 0 auto;
+        display: block;
+        margin-top: 60px;
+        margin-bottom: 60px;
+    }
+    .container {
+        padding: 25px 15px;
+        position: relative;
+    }
+    .title {
+        font-size: 26px;
+        line-height: 26px;
+        margin-bottom: 14px;
+    }
+    
+    .subtitle {
+        font-size: 20px;
+        line-height: 17px;
+    }
+    .rocket {
+        width: 50px;
+        height: 57.72px;
+        margin-left: 25px;
+        margin-top: 10px;
+    }
+    // .flex {
+    //     flex-direction: column;
+    //     row-gap: 10px;
+    // }
+    .subcontainer {
+        height: auto;
+    }
+  }

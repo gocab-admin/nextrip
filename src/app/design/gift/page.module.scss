@@ -1,0 +1,112 @@
+.host {
+    .body{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+
+        .bodyLeft {
+            width: 70%;
+            padding: 50px;
+            margin-left: 16%;
+            h1 {
+                font-weight: bold;
+            }
+            .span {
+                padding-top: 20px;
+                .Link {
+                    color: var(--text-color);
+                    font-weight: bold;
+                    text-decoration: underline;
+                }
+            }
+            button {
+                margin-top: 40px;
+                width: 100%;
+                padding: 10px;
+                border: 1px solid #DA0C81;
+                border-radius: 5px;
+                background-color: #DA0C81;
+                color: white;
+            }
+           
+        }
+        .bodyRight {
+            background-color: #F7F7F7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .box{
+                width: 457px;
+                height: 304px;
+                background-color: #DA0C81;
+                border: 1px solid #DA0C81;
+                border-radius: 15px;
+            }
+        }
+        .bodyBottom {
+            width: 70%;
+            padding: 50px;
+            margin-left: 16%;
+            h1{
+                font-weight: bold;
+            }
+            p {
+                font-size: var(--msg-header-text);
+            }
+            .Link {
+                font-weight: bold;
+                color: var(--text-color);
+                text-decoration: underline !important;
+            }
+           
+        }
+        .bottomRight {
+           padding: 30px;
+           .accordion {
+            box-shadow: none;
+            padding: 15px;
+        }
+         }
+        
+    }
+    
+}
+
+
+//responsive 
+@media screen and (max-width: 768px){
+    .host {
+        .body {
+            grid-template-columns: repeat(1,1fr);
+            .bodyLeft {
+                width: 100%;
+                margin-left:0
+            }
+            .bodyRight{
+                padding: 20px;
+                .box {
+                  width: 100%;
+                  height:425px;
+                }
+            }
+            .bodyBottom {
+                width: 100%;
+                padding:10px;
+                padding-left: 40px;
+                margin-left: 0;
+                h1{
+                    font-weight: bold;
+                }
+                p {
+                    font-size: var(--msg-header-text);
+                }
+                .Link {
+                    font-weight: bold;
+                    color: var(--text-color);
+                    text-decoration: underline !important;
+                }
+               
+            }
+        }
+        
+    }
+}

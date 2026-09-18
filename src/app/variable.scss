@@ -1,0 +1,24 @@
+$theme-color: #ff4850;
+$font-color: #222222;
+
+
+.grid-continer{
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 50px;
+  padding: 50px ;
+  @media only screen and (max-width: 600px){
+    grid-template-columns: auto;
+  }
+  .abcd{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .card{
+    border: 1px solid rgb(215, 208, 208);
+    border-radius: 20px;
+    cursor: pointer;
+  }
+}

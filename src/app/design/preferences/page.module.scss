@@ -1,0 +1,91 @@
+.preference {
+    margin-bottom: 80px;
+    padding: 0 0 80px;
+
+    .tabpanel {
+        max-width: 1080px;
+
+        .divider {
+            border-bottom: 1px solid #EBEBEB;
+        }
+
+        .breadcrums {
+            margin: 40px 0;
+
+            h1 {
+                font-weight: 700;
+                color: var(--font-color-profile); 
+                font-size: var(--h1-font-size);
+            }
+        }
+
+        h5 {
+            margin: 32px 0 8px;
+            font-size: var(--host-index-title);
+            font-weight: 700;
+        }
+        @media (min-width: 1000px) {
+        .tab {
+            display: flex;
+
+            .tabwidth {
+                width: 66.66%;
+            }
+        }
+    }
+                .button {
+                    color: #008489;
+                    background: none;
+                    border: none;
+                    font-weight: 800;
+                }
+
+                .button:hover {
+                    text-decoration: underline;
+                }
+
+                .save {
+                    background-color: #008489;
+                    border: transparent;
+                    border-radius: 4px;
+                    color: var(--btn-color);
+                    font-weight: 800;
+                    padding: 10px 22px;
+                }
+
+                p {
+                    color:var(--font-color-profile);
+                    font-weight: 600;
+                }
+
+                span {
+                    color:var(--font-color-profile);
+                }
+            
+                @media (min-width: 1000px) {
+            .makeall {
+                margin: 0 0 0 86px;
+                width: 32%;
+
+                h5 {
+                    margin-top: 0;
+                    color: #484848;
+                }
+
+                >div {
+                    border: 1px solid rgb(221, 221, 221);
+
+                    p {
+
+                        a {
+                            color: var(--text-color);
+                            text-decoration: underline !important;
+                            font-weight: 600;
+                        }
+                    }
+                }
+            }
+        }
+       
+    }
+}

@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkairstar_admin=self.webpackChunkairstar_admin||[]).push([[9762],{19762:(s,a,r)=>{r.r(a),r.d(a,{default:()=>i});r(65043);var e=r(70579);const i=()=>(0,e.jsx)("div",{children:"Edit User Report List"})}}]);
+//# sourceMappingURL=9762.746d14a9.chunk.js.map

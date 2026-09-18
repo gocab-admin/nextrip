@@ -1,0 +1,214 @@
+
+@import "@/components/style.scss";
+
+
+.dayPicker {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+
+    .buttonday {
+      width: 50%;
+      padding: 10px;
+      border: 1px solid #DDDDDD;
+      background-color: transparent;
+      border-radius: 0px 8px 8px 0px;
+      box-shadow: inset rgba(0, 0, 0, 0.12) 0px 6px 16px;
+    }
+
+    .buttonhours {
+      width: 50%;
+      padding: 10px;
+      border: 1px solid #DDDDDD;
+      background-color: transparent;
+      border-radius: 8px 0px 0px 8px;
+      box-shadow: inset rgba(0, 0, 0, 0.12) 0px 6px 16px;
+    }
+
+    .active { 
+      background-color: var(--btn-bg-color);
+      color: var(--btn-text-color);
+    }
+  }
+
+  .discount {
+    margin-bottom: 20px;
+
+    input {
+      width: 100%;
+      border: 1px solid #DDDDDD;
+      border-radius: 8px;
+      padding: 10px;
+    }
+  }
+
+  .ppl_detail {
+    p {
+      font-size: var(--homepage-header-size);
+      color:var(--footer-text-color);
+      font-family: var(--font-family-base);
+    }
+
+    span {
+      font-size: var(--homepage-footer-size);
+      color: var(--trips-subtitle-color);
+      font-family: var(--font-family-base);
+    }
+  }
+
+  .btn_checkout,
+  .btn_checkin {
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+    background-clip: padding-box;
+    border: 1px solid transparent;
+    border-right: 1px solid var(--svg-color);
+    padding: 7px 12px;
+    p {
+        margin: 0;
+      }
+  }
+
+  .guests {
+    position: absolute;
+    background: var(--btn-color);
+    padding: 10px;
+    border: 1px solid var(--svg-color);
+    width: 100%;
+    z-index: 10;
+  }
+
+.stickysidebar {
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #e5e3e3;
+    z-index: 10;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;
+  }
+  .add_btn {
+    border-radius: 50%;
+    border: 1px solid var(--svg-color);
+    background: var(--btn-color);
+    width: 30px;
+    height: 30px;
+    color: var(--text-color);
+  }
+  .add_btn:disabled,.del_btn:disabled {
+    cursor: not-allowed;
+  }
+
+  .del_btn {
+    border-radius: 50%;
+    border: 1px solid var(--svg-color);
+    background: var(--btn-color);
+    width: 30px;
+    height: 30px;
+    color: var(--text-color);
+  }
+
+  .reservebtn {
+    // background-image: linear-gradient(to right, #e50062 0%, #dd0462 30%, #dd0864 60%, #d40a61 75%, #c20959 100%);
+    padding: 12px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    width: 100%;
+    // color: white;
+    font-weight: 700;
+  }
+  .reservebtnDisable{
+    background-image: linear-gradient(to right, #7e7e7e 0%, #858585 30%, #8a8a8a 60%, #8b8b8b 75%, #757575 100%);
+    padding: 12px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    width: 100%;
+    color: var(--btn-color);
+    font-weight: 700;
+  }
+  .textdec {
+    .text {
+      text-decoration: none;
+    }
+  }
+  .divider {
+    border-bottom: 1px solid #EBEBEB; 
+  } 
+
+  .search_region {
+    position: absolute;
+    top: 0;
+    left: -70%;
+    z-index: 999;
+    background: var(--btn-color);
+    padding: 8px;
+    // border:1px solid #717171;
+    border-radius: 8px;
+    box-shadow:  5.4px 10.7px 10.7px hsl(0deg 0% 0% / 0.33);
+    .button {
+      position: absolute;
+      bottom: 0px;
+      right: 0px;
+      z-index: 999;
+      margin-right: 10px;
+      margin-bottom: 10px;
+      padding: 5px;
+      background-color: var(--footer-text-color);
+      border: 1px solid var(--footer-text-color);
+      border-radius: 5px;
+      background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0));
+      color: var(--btn-color);
+    }
+  }
+
+  .backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #00000006;
+    z-index: 99;
+  }
+
+  // bookit
+  .bookitContainer {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    .column {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    
+    .bookit {
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color:var(--search-button-color);
+      border-radius: 4px; 
+      cursor: pointer;
+      gap: 10px;
+    }
+    .bookit2 {
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color:var(--search-button-color);
+      opacity: 20%;
+      border-radius: 4px; 
+      cursor: pointer;
+      gap: 10px;
+    }
+    p{
+      color: #000;
+    }
+  }
+  
+
+  

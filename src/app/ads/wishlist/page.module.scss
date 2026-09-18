@@ -1,0 +1,229 @@
+.flexHeader {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 40px 20px 40px;
+
+  .header {
+    h2 {
+      font-weight: bold;
+      margin-bottom: 30px;
+      text-transform: capitalize;
+      margin-bottom: 0;
+      color:  var(--text-color);
+    }
+  }
+}
+
+
+.txtColor {
+
+  color:  var(--text-color);
+}
+
+
+.header1{
+  h2 {
+    font-weight: bold;
+    margin-top: 5px;
+    text-transform: capitalize;
+    margin-bottom: 0;
+  }
+}
+.wishlist {
+  padding: 0px 40px 0px 40px;
+  display: grid;
+  justify-content:  space-between;
+
+  // .body {
+  //   .image {
+  //     display: grid;
+  //     grid-template-columns:repeat(4,1fr);
+  //     row-gap: 100px; 
+  //     width: 300px;
+  //     height: 280px;
+  //     gap: 30px;
+  //     .imageContainer {
+  //       position: relative;
+  //       .heart_icon {
+  //         position: absolute;
+  //         top: 10px;
+  //         right: 10px;
+  //       }
+
+  //       .img {
+  //         width: 300px;
+  //         height: 280px;
+  //         border-radius: 10px;
+  //       }
+
+  //       .flexContent {
+  //         p {
+  //           margin-top: 10px;
+  //           margin-bottom: 0;
+  //           color: black;
+  //         }
+  //       }
+  //     }
+
+  //   }
+  // }
+  .image {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 50px;
+    row-gap: 70px;
+    margin-top: 20px;
+    .imageContainer {
+      width: 300px;
+      height: 280px;
+      position: relative;
+      justify-content: center;
+
+      .heart_icon {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        z-index: 9;
+      }
+
+      .img {
+        border-radius: 15px;
+        width: 300px;
+        height: 280px;
+      }
+
+      .flexContent {
+        p {
+          margin-top: 10px;
+          margin-bottom: 0;
+          color: var(--text-color);
+        }
+      }
+    }
+  }
+  .buttn{
+    padding: 5px;
+    // background-color: #222;
+    // border: 1px solid #222;
+    border-radius: 5px;
+    background-image: linear-gradient(to bottom,rgba(255 255 255/0.16),rgba(255 255 255/0));
+    padding: 10px;
+    color: white;
+    font-weight: bold;
+  }
+}
+@media screen and (max-width:1200px) {
+  .wishlist{
+    justify-content: center;
+  }
+}
+//modal 
+
+.modal {
+
+  .header {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+
+    h6 {
+      font-weight: bolder;
+    }
+  }
+
+  .bodyContent {
+    display: flex;
+    justify-content: space-between;
+
+
+    .bodyContent1 {
+      display: flex;
+      gap: 10px;
+
+      p {
+        margin-bottom: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+
+  .rename {
+    margin-top: 30px;
+    margin-bottom: 20px;
+
+    input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid var(--text-color);
+      border-radius: 5px;
+      background-color: transparent;
+    }
+
+    p {
+      color: #525050;
+    }
+  }
+
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    position: sticky;
+    bottom: 0;
+    padding: 10px;
+
+    .btn1 {
+      background-color: transparent;
+      border: 1px solid var(--btn-color);
+      padding: 10px;
+      color: var(--text-color);
+      text-decoration: underline;
+    }
+
+    .btn2 {
+      background-color: var(--text-color);
+      border: 1px solid var(--text-color);
+      border-radius: 5px;
+      padding: 5px 15px 5px 15px;
+      color: var(--btn-color);
+    }
+  }
+
+  .body {
+
+    // padding: 20px;
+    p {
+      margin-bottom: 40px;
+    }
+  }
+}
+
+//responsive 
+
+@media screen and (max-width: 1288px) {
+  .wishlist {
+    .image {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+
+@media screen and (max-width: 1028px) {
+  .wishlist {
+    .image {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .wishlist {
+    .image {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+}

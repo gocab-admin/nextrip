@@ -1,0 +1,334 @@
+@import '@/app/variable.scss';;
+
+.host {
+    .navigation {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 80px;
+        z-index: 9999;
+        background-color: var(--btn-color);
+
+        .header_nav {
+            max-width: 1440px;
+            margin: auto;
+            padding: 0px 80px;
+
+            p {
+                font-size: var(--homepage-header-size);
+                font-weight: 600;
+                color: $font-color;
+            }
+
+            .btn_setup {
+                font-size: var(--msg-header-text);
+                padding: 11px 24px;
+                font-weight: 600;
+                background: linear-gradient(to right, rgb(230, 30, 77) 0%, rgb(227, 28, 95) 50%, rgb(215, 4, 102) 100%);
+                color: var(--btn-color);
+                border-radius: 8px;
+
+                .flexit {
+                    line-height: normal;
+                    font-size: var(--msg-header-text);
+                }
+            }
+        }
+    }
+
+    .airstar_earn_comp {
+        max-width: 1440px;
+        margin: auto;
+        padding: 0px 80px;
+
+        .earn_content {
+            margin-top: 120px;
+            margin-bottom: 120px;
+
+            .earn_body {
+                max-width: 410px;
+                margin: auto;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                h1 {
+                    text-align: center;
+                    font-size: 48px;
+                    font-weight: 600;
+
+                    span {
+                        color: $font-color;
+
+                        &.earn_title {
+                            color: $theme-color;
+                        }
+                    }
+                }
+
+                .price_earn {
+                    font-size: 70px;
+                    font-weight: 600;
+                }
+
+                .estimate_price {
+                    button {
+                        font-size: var(--homepage-header-size);
+                        font-weight: 600;
+                        background-color: unset;
+                        border: none;
+                        text-decoration: underline;
+                    }
+                }
+
+                .price_progress {}
+
+                .estimate_earning {
+                    button {
+                        background-color: unset;
+                        border: none;
+                        font-size:var(--searchbox-header-size);
+                        color: rgb(113, 113, 113);
+                        text-decoration: underline;
+                    }
+                }
+
+                .btn_estimate {
+                    background-color: unset;
+                    border: 1px solid rgb(221, 221, 221);
+                    border-radius: 40px;
+                    width: 100%;
+                    padding: 10px 6px 10px 20px;
+
+                    .btn_place {
+                        line-height: 20px;
+                        color: var(--trips-subtitle-color);
+
+                        .select_spot {
+                            color: var(--footer-text-color);
+                            font-weight: 600;
+                        }
+                    }
+                }
+            }
+
+            .earn_map {
+                border-radius: 24px;
+                position: relative;
+                overflow: hidden;
+
+                .customarker {
+                    width: 300px;
+                    height: 300px;
+                }
+            }
+        }
+    }
+
+    .airstar_setup {
+        max-width: 1440px;
+        margin: auto;
+        padding: 0px 80px;
+
+        .setup_features {
+            margin-top: 120px;
+            margin-bottom: 120px;
+
+            .setup_body {
+                h1 {
+                    text-align: center;
+                    font-size: 48px;
+                    font-weight: 600;
+                    margin-bottom: 40px;
+                }
+
+                .setup_image {
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        object-position: center top;
+                    }
+                }
+
+                .setup_content {
+                    margin-top: 40px;
+                    flex: 0 1 calc(33% - 23px);
+
+                    h3 {
+                        font-size: var(--msg-header-text);
+                    }
+
+                    div {
+                        font-size:var(--homepage-header-size);
+                    }
+                }
+            }
+        }
+    }
+
+    .airstar_table {
+        max-width: 1440px;
+        margin: auto;
+        padding: 0px 80px;
+
+        .table_features {
+            margin-top: 120px;
+            margin-bottom: 120px;
+
+            .table_body {
+                .table_host_img {
+                    margin-bottom: 24px;
+                }
+
+                h1 {
+                    text-align: center;
+                    font-size: 48px;
+                    font-weight: 600;
+                    margin-bottom: 64px;
+                }
+
+                .table_present {
+                    max-width: 848px;
+                    margin: auto;
+
+                    table {
+                        width: 100%;
+                        border-collapse: collapse;
+
+                        thead {
+                            tr {
+                                th {
+                                    min-width: 200px;
+                                    font-weight: 400;
+                                    font-size: var(--host-index-title);
+                                    padding-bottom: 24px;
+                                }
+                            }
+                        }
+
+                        tbody {
+                            tr {
+                                &.border_above {
+                                    border-top: 2px solid #dddddd;
+                                }
+
+                                th {
+                                    height: 80px;
+                                    font-size: var(--host-index-title);
+                                    font-weight: 600;
+                                    min-width: 200px;
+
+                                    &.text_light {
+                                        font-size: var(--msg-header-text);
+                                        font-weight: 400;
+                                    }
+                                }
+
+                                td {
+                                    height: 80px;
+
+                                    &.table_description {
+                                        height: unset;
+                                        color: var(--trips-subtitle-color);
+                                        padding-bottom: 24px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .border_topplace {
+                        border-top: 2px solid #dddddd;
+
+                        a {
+                            color: var(--footer-text-color);
+                        }
+                    }
+
+                    .btn_learnmore {
+                        font-size: var(--homepage-footer-size);
+                        text-decoration: none;
+                        color: var(--footer-text-color);
+                        border-radius: 8px;
+                        border: 1px solid var(--footer-text-color);
+                        background-color: var(--btn-color);
+                        padding: 10px 17px;
+
+                        &:hover {
+                            border: 1px solid var(--text-color);
+                            background-color: var(--btn-color);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .airstar_questions {
+        max-width: 1440px;
+        margin: auto;
+        padding: 0px 80px;
+        background-color: var(--btn-color);
+
+        .ques_section {
+            margin-top: 120px;
+            margin-bottom: 120px;
+
+            .ques_body {
+
+                h1 {
+                    font-size: var(--extra-price-text);
+                    font-weight: 600;
+                    margin-bottom: 64px;
+                }
+                .ques_accordion{
+                    hr{
+                        margin: 0;
+                        border-top:1px solid #dddddd;
+                    }
+                }
+            }
+        }
+    }
+
+    .superhost_sec{
+        max-width: 1440px;
+        margin: auto;
+        padding: 0px 80px;
+        .superhost_container {
+            margin-top: 120px;
+            margin-bottom: 120px;
+            .column_img{
+                .superhost_img{
+                    img{
+                        width: 100%;
+                    }
+                }
+            }
+            .column_content{
+                .superhost_msg{
+                    padding: 0px 72px;
+                    h2{
+                        font-size: var(--extra-price-text);
+                        font-weight: 600;
+                    }
+                    h3{
+                        font-size: var(--msg-header-text);
+                        color: var(--trips-subtitle-color);
+                    }
+                    .btn_superhost{
+                        padding: 13px 23px;
+                        font-size: 17px;
+                        font-weight: 500;
+                        border-radius: 8px;
+                        background-color: var(--btn-color);
+                        border: 1px solid var(--footer-text-color);
+                    }
+                }
+            }
+        }
+    }
+}

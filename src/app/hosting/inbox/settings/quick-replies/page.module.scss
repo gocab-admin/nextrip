@@ -1,0 +1,161 @@
+// @import '@/app/variable.scss';;
+
+.all_quickreplies {
+
+    .slidemain {
+        .slidebackground {
+            background-color: #f7f7f7;
+        }
+    }
+
+    .quickreplies_input {
+        p {
+            color: var(--trips-subtitle-color);
+        }
+
+        tr {
+            color: var(--trips-subtitle-color);
+            border-bottom: 1px solid rgb(235, 235, 235);
+            font-size: var(--homepage-footer-size);
+
+            th {
+                text-transform: uppercase;
+                padding: 8px;
+                text-align: left;
+            }
+
+            td {
+                text-align: left;
+                padding: 16px 8px;
+
+                span {
+                    background-color: rgb(247, 247, 247);
+                    border: 1px solid rgb(221, 221, 221);
+                    border-radius: 4px;
+                    padding: 0px 4px;
+                    font-weight: 500;
+                }
+
+                .checkout {
+                    background-color: rgb(247, 247, 247);
+                    border-radius: 8px;
+                    padding: 8px;
+                    font-weight: 500;
+                    color: var(--text-color);
+                }
+
+                h6 {
+                    font-size: var(--homepage-footer-size);
+                }
+            }
+        }
+
+        tbody {
+            tr {
+                height: 72px;
+            }
+
+            tr:hover {
+                background-color: rgb(247, 247, 247);
+                border-radius: 8px;
+            }
+        }
+
+
+        .quickreplies_plus {
+            width: 16px;
+        }
+    }
+
+}
+
+.modal_group {
+
+    .close {
+        background: transparent;
+        color: var(--trips-subtitle-color);
+    }
+
+    .scroll {
+        overflow-y: auto;
+        height: 500px;
+
+
+        .select {
+            padding-bottom: 112px;
+
+            .fieldset {
+
+                .messagebox {
+                    border: 1px solid rgb(176, 176, 176);
+                    border-bottom: none;
+                    border-top-left-radius: 8px;
+                    border-top-right-radius: 8px;
+                    padding: 8px;
+
+                    .world,
+                    .insert {
+                        .svg {
+                            width: 16px;
+                            height: 16px;
+                        }
+
+                        span {
+                            font-size: var(--homepage-footer-size);
+                            padding: 0px 8px;
+                        }
+                    }
+                }
+
+                .textbox {
+                    height: 170px;
+                    padding: 12px;
+                    border: 1px solid rgb(176, 176, 176);
+                    overflow-y: scroll;
+                    border-bottom-left-radius: 8px;
+                    border-bottom-right-radius: 8px;
+                }
+
+                .shortcode {
+                    border: 1px solid rgb(176, 176, 176);
+                    border-radius: 12px;
+
+                }
+
+                .primary {
+                    background-color: rgb(66, 139, 255) !important;
+                    border-radius: 50% !important;
+                    width: 24px !important;
+                    height: 24px !important;
+                    padding: 6px !important;
+                    margin-right: 8px !important;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+            }
+        }
+    }
+
+    .modal_footer {
+        background-color: white;
+        padding: 16px 24px;
+        border-bottom-left-radius: 12px;
+        border-bottom-right-radius: 12px;
+
+
+        .cancel {
+            background: transparent;
+            border: none;
+            color: var(--text-color);
+            text-decoration: underline !important;
+        }
+
+        .create {
+            background-color: var(--text-color);
+            color: white;
+            border: none;
+            border-radius: 8px;
+        }
+    }
+}

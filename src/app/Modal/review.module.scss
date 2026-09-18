@@ -1,0 +1,46 @@
+.btn {
+    padding: 10px;
+    background-color: var(--text-color);
+    border: 1px solid var(--text-color);
+    border-radius: 5px;
+    color: var(--btn-color);
+}
+
+.Textarea {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #dddddd;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+
+.grid {
+    display: grid;
+    grid-template-columns: auto auto;
+    position: relative;
+
+    .gridContent {
+        display: grid;
+        gap: 10px;
+
+        // label{
+        //     font-size: var(--homepage-header-size);
+        //     color: var(--text-color);
+        //     font-family: var(--font-family-base);
+        // }
+    }
+}
+
+.color {
+    color: red;
+    font-size: var(--homepage-header-size);
+    margin-top: 10px;
+}
+
+.modal_bottom {
+    position: sticky;
+    bottom: 0;
+    background-color: var(--btn-color);
+    z-index: 1;
+}

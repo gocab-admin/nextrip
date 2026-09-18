@@ -1,0 +1,28 @@
+.box{
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     margin-top: 60px;
+     margin-bottom: 150px;
+     .content{
+        width: 450px;
+        height: 50%;
+        border: 1px solid var(--btn-color);
+        border-radius: 10px;
+        box-shadow: 0px -5px 10px 5px #e7e7e7;
+        padding: 40px;
+        .btn{
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            button{
+              padding: 5px;
+              background-color: var(--text-color);
+              color: var(--btn-color);
+              border: 1px solid var(--text-color);
+              border-radius: 5px;
+            }
+        }
+       
+     }
+}

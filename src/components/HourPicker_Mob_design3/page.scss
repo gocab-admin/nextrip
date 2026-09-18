@@ -1,0 +1,19 @@
+
+.color{
+    color:#34c6eb
+  }
+  
+  .padding{
+    padding-top: 1px;
+  }
+  
+  .pointer{
+    cursor: pointer;
+  }
+  .disabled {
+    pointer-events: none; /* Prevents click events */
+    opacity: 0.5; /* Makes the disabled option appear faded */
+  }
+  .time-picker::-webkit-scrollbar {
+    display: none;
+  }

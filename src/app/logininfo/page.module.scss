@@ -1,0 +1,304 @@
+.host {
+    margin-bottom: 80px;
+    padding: 0 0 80px;
+
+    .tabpanel {
+        max-width: 1080px;
+
+        .divider {
+            border-bottom: 1px solid #EBEBEB;
+        }
+
+        .breadcrums {
+            margin: 40px 0;
+
+            .link {
+                color: inherit;
+            }
+
+            h1 {
+                font-weight: 700;
+                color: var(--font-color-profile); 
+                font-size: var(--h1-font-size);
+                font-family: var(--font-family-base);
+            }
+        }
+
+        h5 {
+            margin: 32px 0 8px;
+            font-size: var(--host-index-title);
+            font-weight: 700;
+        }
+
+        .tab {
+            // @media (max-width: 320px) and (max-width:2000px) {
+            .tablist {
+                width: max-content;
+                border-bottom: 1px solid rgb(221, 221, 221);
+
+                > div > div > span {
+                    background-color: var(--search-button-color) !important;
+                }
+            // }
+        }
+                button {
+                    text-transform: capitalize;
+                    font-weight: 600;
+                    color: var(--trips-subtitle-color);
+                }              
+
+                
+            .panels {
+                padding: 0;
+                .tabwidth {
+                    width: 100%;
+                    padding: 20px;
+                        .current {
+                            font-size: 10px;
+                            color:var(--font-color-profile);
+                            background-color: #f2f2f2;
+                            text-transform: uppercase;
+                            font-weight: 800;
+                            padding: 3px 6px;
+                        }
+                        .activetab{
+                            width: 50%;
+                        }
+                        @media screen and (max-width:'660px'){
+                            .activetab{
+                                width: 100%;
+                            }
+                        }
+                    }
+
+                .button {
+                    color: #008489;
+                    background: none;
+                    border: none;
+                    font-weight: 800;
+                    padding: 0;
+                }
+                .button1 {
+                    margin-top: 20px;
+                    color: var(--btn-color);
+                    background: #008489;
+                    border: 1px solid #008489;
+                    font-weight: 800;
+                    padding: 10px;
+                    border-radius: 5px;
+                }
+
+                .button:hover {
+                    text-decoration: underline;
+                }
+
+                .deactive {
+                    color: #D93900;
+                    background: none;
+                    border: none;
+                    font-weight: 800;
+                }
+
+                .deactive:hover {
+                    text-decoration: underline !important;
+                    color: #008489;
+                    background: none;
+                    border: none;
+                    font-weight: 800;
+                }
+
+                .secondtab {
+                    h6 {
+                        font-size: var(--msg-header-text);
+                        font-weight: 600;
+                        color:var(--font-color-profile) !important;
+                        padding: 32px 0 24px;
+                    }
+                }
+                @media (min-width: 1000px) {
+                .makeall {
+                    margin: 0 0 0 86px;
+                    width: 32%;
+                }
+            }
+
+                    >div {
+                        border: 1px solid rgb(221, 221, 221);
+                        border-radius: 12px;
+
+                        .para {
+                            color: rgb(113, 113, 113) !important;
+
+                            a {
+                                color: var(--text-color);
+                                text-decoration: underline !important;
+                            }
+                        }
+
+                        .improve {
+                            background-color: #008489;
+                            color: var(--btn-color);
+                            border: none;
+                            border-radius: 4px;
+                            padding: 14px 24px;
+                        }
+
+                        .span {
+                            font-size: var(--homepage-header-size);
+                            font-weight: 800;
+                            color:var(--font-color-profile)!important;
+
+                            span {
+                                color: rgb(118, 118, 118) !important;
+                            }
+                        }
+                    }
+                
+                
+
+               
+            }
+        }
+    }
+}
+
+.loginsecurity {
+    .personal {
+        .editbtn {
+            border: transparent;
+            background-color: unset;
+            text-decoration: underline !important;
+            color: var(--text-color);
+            cursor: pointer;
+        }
+
+        .cancelbtn {
+            border: transparent;
+            background-color: unset;
+            text-decoration: underline !important;
+            color: var(--text-color);
+            display: block;
+            text-align: right;
+            cursor: pointer;
+        }
+
+        .savebtn {
+            background-color: var(--text-color);
+            border-radius: 5px;
+            color: var(--btn-color);
+            border: unset;
+            padding: 10px;
+        }
+
+        input {
+            border: 1px solid lightgrey;
+            border-radius: 5px;
+            padding: 10px;
+            width: 100%;
+        }
+
+
+
+        h4,
+        .h4 {
+            font-size: var(--msg-header-text);
+            font-weight: 500;
+        }
+    }
+    .rightcon {
+        border: 1px solid #dedede;
+        border-radius: 5px;
+
+        svg {
+            color: #ff2e5b;
+            font-size: 30px;
+        }
+    }
+    .improvebtn{
+        background-color: #008589;
+        border: 1px solid #008589;
+        border-radius: 5px;
+        padding: 10px;
+        color: var(--btn-color);
+    }
+    @media (min-width: 1200px) {
+
+        .personal {
+            h3 {
+                font-size: 21px;
+                font-weight: bolder;
+                color: var(--text-color);
+                margin-top: 20px;
+            }
+
+        }
+    }
+}
+.ModalH1 {
+    display: flex;
+    align-items: center;
+    font-weight:bold;
+    font-size: var(--homepage-header-size);
+    margin-top: 16px;
+
+    .box {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: var(--svg-color);
+        margin-right: 30px;
+    }
+    .box2 {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: #008589;
+        margin-right: 30px;
+    }
+    .CheckIcon {
+            color: var(--btn-color);
+            height: 40px;
+            width: 40px;
+            padding: 3px;
+    }
+}
+
+.emailmodal {
+    padding: 40px;
+    input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #8a8a8a;
+        border-radius: 5px;
+    }
+}
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 30px;
+    border-top: 1px solid var(--svg-color);
+    button {
+        width: 80px;
+        padding: 10px;
+        border: #01cad1;
+        background-color: #01cad1;
+        border-radius: 5px;
+        color: var(--btn-color);
+    }
+    .back {
+        width: 80px;
+        padding: 10px;
+        background-color: var(--btn-color);
+        border-radius: 5px;
+        color: #01cad1;
+        display: flex;
+    }
+}
+
+.myTabList .MuiTabs-indicator {
+    background-color: var(--search-button-color) !important;
+  }
+

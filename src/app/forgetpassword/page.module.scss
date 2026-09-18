@@ -1,0 +1,62 @@
+.body{
+    height: 100vh;
+    padding-top: 80px;
+    width: 40%;
+    margin: auto;
+    .input_border {
+        width: 100%;
+        border: 1px solid var(--trips-subtitle-color);
+        border-radius: 8px;
+      
+        .form_select {
+          padding: 25px 12px 8px;
+          border-bottom: 1px solid var(--trips-subtitle-color);
+      
+          label {
+            color: rgba(0, 0, 0, 0.6);
+            top: 15px;
+            left: -3px;
+          }
+        }
+      
+        .form_selects {
+          border-bottom: 1px solid var(--trips-subtitle-color);
+        }
+      
+      }
+      .loginbtn {
+        // background-color: #ff385c !important;
+        border-radius: 5px !important;
+        padding: 15px !important;
+        color: var(--btn-color);
+        width: 100%;
+        background-color: rgb(25, 118, 210);
+        background-image: linear-gradient(to bottom, rgba(255, 0, 0, 0.16), rgba(255, 178, 178, 0)) !important
+      }
+      .buttn{
+        padding: 10px;
+        // background-color: #ff385c !important;
+        background-color: rgb(25, 118, 210);
+        background-image: linear-gradient(to bottom, rgba(255, 0, 0, 0.16), rgba(255, 178, 178, 0)) !important;
+        border-radius:50px;
+        color: var(--btn-color);
+      }
+}
+@media screen and (max-width:920px){
+    .body{
+        height: 100vh;
+        padding-top: 40px;
+        width: 70%;
+        margin: auto;
+    }
+}
+@media screen and (max-width:600px){
+    .body{
+        height: 100vh;
+        padding-top: 40px;
+        padding-right: 20px;
+        padding-left: 20px;
+        width: 100%;
+        margin: auto;
+    }
+}
