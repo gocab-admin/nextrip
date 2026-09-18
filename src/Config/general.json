@@ -1,0 +1,133 @@
+{
+    "baseURL":"https://e913-122-165-182-177.ngrok.io/",
+    "baseURL1":"https://node.absera.com:3016/",
+    "jwtSecret": "UE9tCaxtgBKXNSsagEds9GcqGYaqvdfs9DEsWXKvCtmvnFxdxPj1S3iQeDNKp99e5",
+    "fileurl": "",
+    "appName": "oGoStar",
+    "database": "OgoStar",
+    "companyaddress": "Simmakal,madurai",
+    "companymail": "support@abservetech.com",
+    "adminfcmServer": "AAAAbqiZ7A0:APA91bER-r5PTDbQr6nuGiXOACLXZhbBy1E3kIHIAMAGBR8uV4jvNUQzld4YVlQG3BjbUjYThW8BHkUYvlOZDjWqmym4wGa1E23n0aLb2Z1MvoJyscr3xcHAks9R0PwT24gqBWKaNgjH",
+    "phoneCode": "+91",
+    "gmt": "+05:30",
+    "utcOffset": "+05:30",
+    "utcOffsetSub": "-05:30",
+    "appLanguages": [
+        "en",
+        "es"
+    ],
+    "userLoginType": "otp",
+    "providerLoginType": "username",
+    "orientation": "ltl",
+    "resentCounterSecs": 30,
+    "otpValidityMinutes": {
+        "numberVerification": 5,
+        "passwordVerification": 10
+    },
+    "appServices": [
+        "delivery",
+        "home",
+        "online"
+    ],
+    "appServicesSettings": {
+        "home": {
+            "multivendor": true
+        }
+    },
+    "smsGateway": [
+        {
+            "status": true,
+            "name": "twilio",
+            "twilioaccountSid": "AC7dfbeafc0f848e2a386faa71387986cb",
+            "twilioauthToken": "992e519f81b4dde26c1e3684b79a69da",
+            "twilioNo": "+12167771627"
+        },
+        {
+            "status": false,
+            "name": "nexmo",
+            "nexmoapiKey": "1865db7f",
+            "nexmoapisecret": "uXO8U644L2J3HsvO",
+            "signatureSecret": "JEecOOMcAgTiUA0R3K2TfKUGhr6qg9CHU9OIFy6wc2UgzMeC3d",
+            "nexmoapiNumber": "Vonage APIs"
+        },
+        {
+            "status": false,
+            "name": "local",
+            "localAPIendpoint": ""
+        }
+    ],
+    "emailGateway": [
+        {
+            "status": true,
+            "name": "nodemailer",
+            "mailFrom": "kanmaniabservetech@gmail.com",
+            "host": "mail.abserve.tech",
+            "userName": "smtp@abserve.tech",
+            "password": "Uf5OufGim&v&"
+        },
+        {
+            "status": false,
+            "name": "sendgrid"
+        },
+        {
+            "status": false,
+            "name": "sendinblue"
+        }
+    ],
+    "paymentGateway": [
+        {
+            "status": true,
+            "name": "razorpay",
+            "mode": "test",
+            "keyId": "rzp_test_jcn8jZWKT6ISZk",
+            "keySecret": "K6l79cLtL2H5SHnbbVG0Npjw",
+            "accountNumber": "2323230007960194"
+        },
+        {
+            "status": false,
+            "name": "paytm",
+            "mode": "test",
+            "keyId": "",
+            "keySecret": ""
+        },
+        {
+            "status": false,
+            "name": "stripe",
+            "mode": "test",
+            "keyId": "",
+            "keySecret": ""
+        }
+    ],
+    "referalSettings": {
+        "isProviderReferalCodeAvailable": "true",
+        "providerReferalAmount": "50",
+        "providerMaxReferalAmount": "100",
+        "isCustomerReferalCodeAvailable": "true",
+        "customerReferalAmount": "102",
+        "customerMaxReferalAmount": "100"
+    },
+    "languages": [
+        {
+            "default": true,
+            "name": "English",
+            "code": "en"
+        },
+        {
+            "default": false,
+            "name": "Spanish",
+            "code": "es"
+        }
+    ],
+    "currency": [
+        {
+            "default": true,
+            "name": "USD",
+            "symbol": "$"
+        },
+        {
+            "default": false,
+            "name": "Rupee",
+            "symbol": "₹"
+        }
+    ]
+}

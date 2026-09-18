@@ -1,0 +1,97 @@
+{
+    "userRolesUser": "user",
+    "userRolesAdmin": "admin",
+    "userRolesProvider": "provider",
+
+    "userRole" : {
+        "ADMIN" : "ADMIN",
+        "PROVIDER" : "PROVIDER",
+        "USER" : "USER"
+    },
+    
+    "adminCode": "ADMIN001",
+    "verifiedStatus": "verified",
+    "notVerifiedStatus": "notverified",
+    "verificationFor": {
+        "userPhone": "userPhone",
+        "providerPhone": "providerPhone",
+        "deliveryPhone": "deliveryBoyPhone"
+    },
+    "deliveryTypes": {
+        "homeDelivery": "home",
+        "shop": "shop"
+    },
+    "appServices": {
+        "homeService": "home",
+        "deliveryService": "delivery",
+        "onlineService": "online",
+        "foodService": "food"
+    },
+    "orderStatus": {
+        "placed": "placed",
+        "accepted": "accepted",
+        "rejected": "rejected",
+        "toDestination": "toDestination",
+        "arrived": "arrived",
+        "started": "started",
+        "progress": "progress",
+        "completed": "completed"
+    },
+    "deliveryStatus": {
+        "failed": "failed",
+        "pending": "pending",
+        "completed": "completed",
+        "delivered": "delivered"
+    },
+    "commonCMSTypes": {
+        "BRANDS": "BRANDS"
+    },
+    "orderPriority": {
+        "now": "now",
+        "later": "later"
+    },
+    "paymentStatus": {
+        "paid": "paid",
+        "notpaid": "notpaid"
+    },
+    "paymentMode": {
+        "cash": "cash",
+        "card": "card",
+        "wallet": "wallet"
+    },
+    "dateTimeFormat": {
+        "getSlots": "DD MMM",
+        "neededDocumentsExpiry": "DD-MM-YYYY",
+        "walletPaymentDate": "DD-MM-YYYY HH:mm:ss"
+    },
+    "fileForUploads": {
+        "CATEGORYFILES": "CATEGORYFILES",
+        "USERPROFILE": "USERPROFILE",
+        "PROVIDERDOCS": "PROVIDERDOCS",
+        "DELIVERYBOYDOCS": "DELIVERYBOYDOCS",
+        "BANNERFILES": "BANNERFILES",
+        "COMMONCMSFILES": "COMMONCMSFILES",
+        "USERPROFILEFILES": "USERPROFILEFILES",
+        "SERVICEFILES": "SERVICEFILES"
+    },
+    "notoficationForProviders": [
+        {
+            "label": "All Providers",
+            "value": "AP"
+        },
+        {
+            "label": "All Offline Providers",
+            "value": "AOP"
+        }
+    ],
+    "notoficationForUsers": [
+        {
+            "label": "All Users",
+            "value": "AU"
+        },
+        {
+            "label": "All Offline Users",
+            "value": "AOU"
+        }
+    ]
+}

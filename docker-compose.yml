@@ -1,0 +1,10 @@
+version: '3.0'
+services:
+  boatstar:
+    tty: true
+    network_mode : "host"    
+    image: boatstar:latest
+    volumes:
+      - "./build/public/:/boatstar/public/"
+      - "./build/logs/:/boatstar/logs/"
+    restart: always

@@ -1,0 +1,14 @@
+{
+    "type": "service_account",
+    "project_id": "airstar-f2483",
+    "private_key_id": "d7ee91ac725d14268cf90f34d7156df239caae57",
+    "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCzIDn1Kgmz0jut\nslcNMJJmLPfmSsa2Bde71Kgz3FxdZnqMJJwvKogyl8QvBA9tJ4/6X+RGoygV0zFo\nCIDoZ2CGCuHOoNi4HxPU5Ujd9LR1Qd+KEz87gyTnxgYG4I1KDxPjc91Eei/fOJS4\nsfGaKulbvxOwPe37rc1zSibL4ms3hqBBgOyzwXHfKP0ZaITfvSU58cVLrh8qxapZ\nJW8Q9hrE8fKzs2L68TUE6p3opXqW5V1gP43a8zM/yXOtF2rv7crVAD7a6kDsqdeN\nybtmSjnIX2/RlSasVaJhoSjnuxT7uX6YF6vjZXlqYew8N0xCa+ti7DcpjDRd78NR\n9o58Po7BAgMBAAECggEAEVeYZOUKBW/gOUPf67X9JolKAvDQZkUQiu3ezw6RnrVS\nPgk5WdOrVgKditPAzpea9+maxz/6nIpS6TiRim6fyLp6/C9UbBcOK3l7YYnUgtm6\n07pjT9a1lv70DGxnIXluOoI4NO4DfoAS3gLUWlG3QBuyw0hrpwc/sd7G/MxSBxEH\nLhfDFH4Uur5cO+/iL5cB7vHW248mRMDzpu2mv2s+tJjoYceqv/iP4v7k5qiultKc\n346zzMZ3a+qmte1N4hxEudGB/Y6b9k8ZhC6uQeUUNFFHG48c7Fn3WslOXXg3rynr\npByhV/aeKkU+LKmWRzI3+GAXZcfjX1jgV6yFDoPppQKBgQDb98dFePUygCTey+/T\nPU4TrEo3LilK3fJKOj6O1RVemEHNCBGlsnC7qdrX1ztMYBQt9kiuhCsiUZmTh7k8\nq8NW4NbCJGippeBBKTxR0Iu9ZWR4r6TDWZST5pI5hWgUoLZb31sT0iBEwJsqhu0r\n0col4KfEU9P45SCwcrgW5xSezwKBgQDQd8NerQ2kAMMzjaiKRwAYDRQi2406dkC9\nNJidx635TmSoxQIGkUZXFC5mqoHQTpK9oRhYhXOxdGCW0AixlAGB81h/sio4JGjX\n0uSLK6ix1H8fxLBWmGWkikhh+lPDA1rRI6UDXaXztZ8y7Majna3ea06/A75mMImw\nmwXzxLvdbwKBgBJ69LDvgpoljfNx6soyglbAyNNt+2Yg03RNBGh3mn4CCLUzElh7\nb2E02f/8Qy0dfVSHNoAC9qTBekecxYFFZPntld1lta1bFEYlMr4k6TiWRiSljRAk\nfIkYe/x9Kstg3TFGyJ4Xr0JXdDHUeCSQUY1xHGcwK8TjayWn3bN+4oqdAoGAS4fo\n+GeY9p/0GbysoRUiepRahFqp69GmmSbyWNBdP2Pg4qkml7yREMHWIgqLKC8fyacR\njBkmFtiEmn/bdoOanDvQB8xEsby3Y+McPTRfVbcZLCh2f5mN0jTsDtvE93ZCtF3G\nztZiZ0+Z07ioK+XYdirJCDpSBPJ3IM66NF1Gd+8CgYADnpPkIQ2oXghVGkb3plI1\nWFNyD1jzOc/NqyAedh1qh8iyuD3/j9GWliHKIsA9XXI8Tsf+KVS7fluKPEdztT97\nI4m/RAtmdtSLMZ7/eRxB1HEfGHuir2iawuBdJuzqSSnyIi+9kvI0qV+WebGN9kQQ\nKx1w7fpuZ8T5Xtpts4IFIw==\n-----END PRIVATE KEY-----\n",
+    "client_email": "firebase-adminsdk-vm27m@airstar-f2483.iam.gserviceaccount.com",
+    "client_id": "110468657008532489902",
+    "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+    "databaseUrl":"https://airstar-f2483-default-rtdb.firebaseio.com",
+    "token_uri": "https://oauth2.googleapis.com/token",
+    "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+    "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-vm27m%40airstar-f2483.iam.gserviceaccount.com",
+    "universe_domain": "googleapis.com"
+  }

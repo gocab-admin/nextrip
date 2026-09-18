@@ -1,0 +1,4 @@
+{
+    "geoNear": true,
+    "radius":4
+}
