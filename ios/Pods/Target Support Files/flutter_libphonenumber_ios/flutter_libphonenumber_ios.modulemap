@@ -1,0 +1,6 @@
+framework module flutter_libphonenumber_ios {
+  umbrella header "flutter_libphonenumber_ios-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,7 @@
+#include? "Pods/Target Support Files/Pods-Runner/Pods-Runner.debug.xcconfig"
+#include "Generated.xcconfig"
+
+FLUTTER_TARGET=lib/main_airstarcars.dart
+ASSET_PREFIX=airstarcars
+BUNDLE_NAME=AirStar Cars
+BUNDLE_DISPLAY_NAME=AirStar Cars

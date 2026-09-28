@@ -1,0 +1,7 @@
+#include? "Pods/Target Support Files/Pods-Runner/Pods-Runner.debug.xcconfig"
+#include "Generated.xcconfig"
+
+FLUTTER_TARGET=lib/main_airspace.dart
+ASSET_PREFIX=airspace
+BUNDLE_NAME=AirSpace
+BUNDLE_DISPLAY_NAME=AirSpace

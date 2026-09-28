@@ -1,0 +1,7 @@
+#include? "Pods/Target Support Files/Pods-Runner/Pods-Runner.debug.xcconfig"
+#include "Generated.xcconfig"
+
+FLUTTER_TARGET=lib/main_karibuking.dart
+ASSET_PREFIX=karibuking
+BUNDLE_NAME=Karibu King
+BUNDLE_DISPLAY_NAME=Karibu King

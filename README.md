@@ -1,4 +1,4 @@
-# nextrip
+# Base Project Flutter Provider
 
 
 
@@ -15,14 +15,14 @@ Already a pro? Just edit this README.md and make it your own. Want to make it ea
 
 ```
 cd existing_repo
-git remote add origin https://git.abservetech.co.in:8001/react/nextrip.git
+git remote add origin https://git.abserve.tech/flutter_pro/base-project-flutter-provider.git
 git branch -M main
 git push -uf origin main
 ```
 
 ## Integrate with your tools
 
-- [ ] [Set up project integrations](https://git.abservetech.co.in:8001/react/nextrip/-/settings/integrations)
+- [ ] [Set up project integrations](https://git.abserve.tech/flutter_pro/base-project-flutter-provider/-/settings/integrations)
 
 ## Collaborate with your team
 
@@ -90,3 +90,10 @@ For open source projects, say how it is licensed.
 
 ## Project status
 If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+
+
+## Flavor app 
+
+get app build (APK) file
+
+flutter build appbundle --flavor <Flavor Name> -t lib/<Flavor main file name>.dart

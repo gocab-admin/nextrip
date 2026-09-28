@@ -1,0 +1,39 @@
+{
+  "name": "flutter_libphonenumber_ios",
+  "version": "1.1.4",
+  "summary": "Leverages libphonenumber to allow for asynchronous and synchronous formatting of phone numbers in Flutter apps. Includes a TextInputFormatter to allow real-time AsYouType formatting.",
+  "description": "Leverages libphonenumber to allow for asynchronous and synchronous formatting of phone numbers in Flutter apps. Includes a TextInputFormatter to allow real-time AsYouType formatting.",
+  "homepage": "https://github.com/bottlepay/flutter_libphonenumber",
+  "license": {
+    "file": "../LICENSE"
+  },
+  "authors": {
+    "Andrew Coutts": "andrew.coutts@bottlepay.com"
+  },
+  "source": {
+    "path": "."
+  },
+  "source_files": "Classes/**/*",
+  "dependencies": {
+    "Flutter": [
+
+    ],
+    "PhoneNumberKit/PhoneNumberKitCore": [
+      "3.8.0"
+    ]
+  },
+  "platforms": {
+    "ios": "12.0"
+  },
+  "pod_target_xcconfig": {
+    "DEFINES_MODULE": "YES",
+    "VALID_ARCHS[sdk=iphonesimulator*]": "x86_64"
+  },
+  "swift_versions": "5.0",
+  "resource_bundles": {
+    "flutter_libphonenumber_ios": [
+      "Resources/PrivacyInfo.xcprivacy"
+    ]
+  },
+  "swift_version": "5.0"
+}

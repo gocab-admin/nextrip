@@ -1,0 +1,426 @@
+{
+  "project_info": {
+    "project_number": "411258942751",
+    "firebase_url": "https://airstar-7fbc3.firebaseio.com",
+    "project_id": "airstar-7fbc3",
+    "storage_bucket": "airstar-7fbc3.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:411258942751:android:c72245b6468d5fb625ec2a",
+        "android_client_info": {
+          "package_name": "com.abserve.tech.airstar"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "411258942751-60a3oa0vs85nfbjqluhtoilhjmju40dl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.abserve.tech.airstar",
+            "certificate_hash": "1f96ce3cfbc7a3002abd6348884c60b6ee4d04c4"
+          }
+        },
+        {
+          "client_id": "411258942751-7idsp4p53o38e49i23cvb22sgnsrc6qq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.abserve.tech.airstar",
+            "certificate_hash": "494366e3cf1cd0915e3b82608453df50cf5581f3"
+          }
+        },
+        {
+          "client_id": "411258942751-fkp79eqctl79m5sqc4870tvm68gqqh0c.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.abserve.tech.airstar",
+            "certificate_hash": "4ab8f2d02e1e82913d695923d1a180fcfa55bbd6"
+          }
+        },
+        {
+          "client_id": "411258942751-npp9pdmmjr3de86bb8ggakh4jmqdv1v9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.abserve.tech.airstar",
+            "certificate_hash": "2424e7646c1693a57f1d1e48549c8ccbf3af2c0a"
+          }
+        },
+        {
+          "client_id": "411258942751-pu30im8ua5bfn39tru6lp7h7us3kc5tm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.abserve.tech.airstar",
+            "certificate_hash": "ecda3be883e27ac0fcb4e4c519f763ce668128a5"
+          }
+        },
+        {
+          "client_id": "411258942751-bmqa85aect44bs3335l2qg6lk9v6sli0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAxvNMqKCw-ikep_FW4Xtg7GTPuh6oO8cc"
+        },
+        {
+          "current_key": "AIzaSyA9tOwpffhgAAtk_qSVthGFW24LH4Au8yQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "411258942751-bmqa85aect44bs3335l2qg6lk9v6sli0.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "411258942751-6uhnqt0ci1p9of385hg22m87ck2grhet.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.abserve.tech.airstar"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:411258942751:android:2cdc786db8c6599325ec2a",
+        "android_client_info": {
+          "package_name": "com.abservetech.airspace"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "411258942751-ni6avmbbqo48ihdgjop0v04mpn4755g2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.abservetech.airspace",
+            "certificate_hash": "4ab8f2d02e1e82913d695923d1a180fcfa55bbd6"
+          }
+        },
+        {
+          "client_id": "411258942751-bmqa85aect44bs3335l2qg6lk9v6sli0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAxvNMqKCw-ikep_FW4Xtg7GTPuh6oO8cc"
+        },
+        {
+          "current_key": "AIzaSyA9tOwpffhgAAtk_qSVthGFW24LH4Au8yQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "411258942751-bmqa85aect44bs3335l2qg6lk9v6sli0.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "411258942751-6uhnqt0ci1p9of385hg22m87ck2grhet.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.abserve.tech.airstar"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:411258942751:android:6adb06599472af1e25ec2a",
+        "android_client_info": {
+          "package_name": "com.abservetech.airstarboats"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "411258942751-bmqa85aect44bs3335l2qg6lk9v6sli0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAxvNMqKCw-ikep_FW4Xtg7GTPuh6oO8cc"
+        },
+        {
+          "current_key": "AIzaSyA9tOwpffhgAAtk_qSVthGFW24LH4Au8yQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "411258942751-bmqa85aect44bs3335l2qg6lk9v6sli0.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "411258942751-6uhnqt0ci1p9of385hg22m87ck2grhet.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.abserve.tech.airstar"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:411258942751:android:58701bcd42032d3a25ec2a",
+        "android_client_info": {
+          "package_name": "com.abservetech.airstarcars"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "411258942751-fnkqqha63vsomi304jj968tafde4vemu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.abservetech.airstarcars",
+            "certificate_hash": "c3e0ddb4c2577bceeb2622968874e2c70c4f85cc"
+          }
+        },
+        {
+          "client_id": "411258942751-bmqa85aect44bs3335l2qg6lk9v6sli0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAxvNMqKCw-ikep_FW4Xtg7GTPuh6oO8cc"
+        },
+        {
+          "current_key": "AIzaSyA9tOwpffhgAAtk_qSVthGFW24LH4Au8yQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "411258942751-bmqa85aect44bs3335l2qg6lk9v6sli0.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "411258942751-6uhnqt0ci1p9of385hg22m87ck2grhet.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.abserve.tech.airstar"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:411258942751:android:2dc84702802f329e25ec2a",
+        "android_client_info": {
+          "package_name": "com.airbnb.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "411258942751-bmqa85aect44bs3335l2qg6lk9v6sli0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAxvNMqKCw-ikep_FW4Xtg7GTPuh6oO8cc"
+        },
+        {
+          "current_key": "AIzaSyA9tOwpffhgAAtk_qSVthGFW24LH4Au8yQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "411258942751-bmqa85aect44bs3335l2qg6lk9v6sli0.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "411258942751-6uhnqt0ci1p9of385hg22m87ck2grhet.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.abserve.tech.airstar"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:411258942751:android:7c9ca6ba0878a59f25ec2a",
+        "android_client_info": {
+          "package_name": "com.glyphstay.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "411258942751-bmqa85aect44bs3335l2qg6lk9v6sli0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAxvNMqKCw-ikep_FW4Xtg7GTPuh6oO8cc"
+        },
+        {
+          "current_key": "AIzaSyA9tOwpffhgAAtk_qSVthGFW24LH4Au8yQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "411258942751-bmqa85aect44bs3335l2qg6lk9v6sli0.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "411258942751-6uhnqt0ci1p9of385hg22m87ck2grhet.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.abserve.tech.airstar"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:411258942751:android:8c78a5ba8f0f504125ec2a",
+        "android_client_info": {
+          "package_name": "com.karibuking.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "411258942751-l6jvp9oqg4o3cfam238a86t7efmhie2p.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.karibuking.app",
+            "certificate_hash": "4ab8f2d02e1e82913d695923d1a180fcfa55bbd6"
+          }
+        },
+        {
+          "client_id": "411258942751-bmqa85aect44bs3335l2qg6lk9v6sli0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAxvNMqKCw-ikep_FW4Xtg7GTPuh6oO8cc"
+        },
+        {
+          "current_key": "AIzaSyA9tOwpffhgAAtk_qSVthGFW24LH4Au8yQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "411258942751-bmqa85aect44bs3335l2qg6lk9v6sli0.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "411258942751-6uhnqt0ci1p9of385hg22m87ck2grhet.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.abserve.tech.airstar"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:411258942751:android:e5963b1faffbe80d25ec2a",
+        "android_client_info": {
+          "package_name": "com.nextrip.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "411258942751-bmqa85aect44bs3335l2qg6lk9v6sli0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAxvNMqKCw-ikep_FW4Xtg7GTPuh6oO8cc"
+        },
+        {
+          "current_key": "AIzaSyA9tOwpffhgAAtk_qSVthGFW24LH4Au8yQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "411258942751-bmqa85aect44bs3335l2qg6lk9v6sli0.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "411258942751-6uhnqt0ci1p9of385hg22m87ck2grhet.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.abserve.tech.airstar"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:411258942751:android:3f89abeb83e63f7625ec2a",
+        "android_client_info": {
+          "package_name": "com.zcodia.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "411258942751-bmqa85aect44bs3335l2qg6lk9v6sli0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAxvNMqKCw-ikep_FW4Xtg7GTPuh6oO8cc"
+        },
+        {
+          "current_key": "AIzaSyA9tOwpffhgAAtk_qSVthGFW24LH4Au8yQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "411258942751-bmqa85aect44bs3335l2qg6lk9v6sli0.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "411258942751-6uhnqt0ci1p9of385hg22m87ck2grhet.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.abserve.tech.airstar"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
